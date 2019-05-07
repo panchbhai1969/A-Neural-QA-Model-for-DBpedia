@@ -7,6 +7,6 @@ RDF is a directed, labeled graph data format for representing information in the
 
 ###### Table containing information about the posts:
 
-| Serial Number        | Heading          | Day Published |
-|:-------------|:------------------|:------|
-| 1           | [The Selection Day](./TheSelectionDay.html).  | 8th May 2019  |
+| Serial Number        | Heading          |  Published On | Stage Number |
+|:-------------|:------------------|:------|:----|
+| 1           | [The Selection Day](./TheSelectionDay.html).  | 8th May 2019  | One|
