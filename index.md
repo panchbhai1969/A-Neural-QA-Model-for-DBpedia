@@ -9,4 +9,4 @@ RDF is a directed, labeled graph data format for representing information in the
 
 | Serial Number        | Heading          |  Published On | Stage Number |
 |:-------------|:------------------|:------|:----|
-| 1           | [The Selection Day](./TheSelectionDay.html).  | 8th May 2019  | One|
+| 1           | [The Selection Day](./TheSelectionDay.html)  | 8th May 2019  | One|
