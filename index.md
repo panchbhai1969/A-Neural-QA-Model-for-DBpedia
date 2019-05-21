@@ -16,4 +16,4 @@ RDF is a directed, labeled graph data format for representing information in the
  | Serial Number| Heading           |Abstract|  Published On | Stage Number |
 |:-------------|:------------------|:-----------|:------|:----|
 | 1           | [The Selection Day](./TheSelectionDay.html) | My proposal was accepted for GSoC this year. A brief overview of my experience.| 8th May 2019  | Zero|
-
+| 2           | [Week Two](./WeekTwo.html) | Community bonding period, First Meeting | 19th May 2019  | Zero |
