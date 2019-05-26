@@ -2,7 +2,7 @@
 
 ### Answering the questions put forward in the last meeting: 
 
->> ### What is my idea to handle the main issue of the project: Compositionality for complex QA? 
+>> ### What is my idea to handle the main issue of the project: Compositionality for complex QA?  
 
 The definition of Compositionality for  complex QA defined in the previous meeting was:
 
@@ -14,7 +14,8 @@ Compositionality is only one aspect of complex question and answer, and the give
 
 - To create a bigger dataset I intend to follow the specific methods laid out in my proposal.
 
-- While carrying out the literature survey I came across some important findings on which i would like to here the mentors comments (later part of this page). 
+- While carrying out the literature survey I came across some important findings on which i would like to hear the mentors comments (later part of this page).  
+
 -----
 
 ### Work done this week:
