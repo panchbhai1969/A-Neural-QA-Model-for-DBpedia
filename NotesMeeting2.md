@@ -2,9 +2,9 @@
 
 ### Answering the questions put forward in the last meeting: 
 
->> ### What is my idea to handle the main issue of the project: Complex QA? 
+>> ### What is my idea to handle the main issue of the project: Compositionality for complex QA? 
 
-The definition of complex QA defined in the previous meeting was
+The definition of Compositionality for  complex QA defined in the previous meeting was:
 
 >> A composition B are there in the training dataset, C also exists in the dataset but is not related in any way with B. The final model should be able to generate B composition C when the need arises.
 
