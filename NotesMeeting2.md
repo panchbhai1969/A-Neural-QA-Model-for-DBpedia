@@ -1,5 +1,9 @@
 # Meeting 2: Notes
 
+
+
+
+
 ### Answering the questions put forward in the last meeting: 
 
 >> ### What is my idea to handle the main issue of the project: Compositionality for complex QA?  
@@ -10,7 +14,7 @@ The definition of Compositionality for  complex QA defined in the previous meeti
 
 Compositionality is only one aspect of complex question and answer, and the given definition is restricted to only a few examples in terms of complexity. The proposal I  put forward tends to handle this issue by:
 
-- Creating a bigger dataset of composite complex question and answer, as bigger dataset have been known to enhance the performance of the NsPM models.
+- Creating a bigger dataset of composite complex question and answer, as bigger dataset have been known to enhance the performance of the NsPM model.
 
 - To create a bigger dataset I intend to follow the specific methods laid out in my proposal.
 
@@ -20,9 +24,9 @@ Compositionality is only one aspect of complex question and answer, and the give
 
 ### Work done this week:
 
-- Understanding the code base. (Still working)
+- Understanding the code base. (mainly template-generation, rest Still working)
 - Literature Survey.
-- We will be using GERBIL for all testing purposes, I intend to create the script for converting the datsets we have to the format accepted by GERBIL and then let it calculate the scores.(By file upload mechanism)
+- We will be using GERBIL for all evaluation purposes, I intend to create the script for converting the datsets we have to the format accepted by GERBIL and then let it calculate the scores.(By file upload mechanism)
 
 ## Literature Survey
 
@@ -33,8 +37,7 @@ While carrying out the literature survey I came across another definitions which
 >> Complex QA: Questions in which the intended SPARQL query does not consist of a single triple pattern.
 
 Many queries are not simple: 
-- Comparative
-questions (e.g. "Was John Oliver born before Jon Stewart?"),  
+- Comparative questions (e.g. "Was John Oliver born before Jon Stewart?"),  
 - Boolean questions (e.g.
 "Is Poland a part of Eurozone?")
 - Questions involving fact aggregation (e.g. "Who
@@ -68,16 +71,16 @@ Source: [LC-QuAD: A Corpus for Complex Question Answering over Knowledge Graphs]
 
 - You can find the paper here: [LC-QuAD: A Corpus for Complex Question Answering over Knowledge Graphs](http://lc-quad.sda.tech/)
 
-- The main point here being that a carefully curated datset exists and we should take advantage of it.  
-
 - The paper stated that the said dataset was to be later included in QALD8  but the size of the training datset was only 219 questions in QALD8.
+
+- The main point here being that a carefully curated datset exists and we should take advantage of it. FOr template generation. 
 
 ---
 
 ### Checking out the previous competitors in QALD dataset:
 
 >> WDAqua-core1: A Question Answering service for RDF
-Knowledge Bases:
+Knowledge Bases, brief workflow is given below:
 
 - Query Expansion phase we first see to which possible concepts the consequent words in the question can refer to. 
 
@@ -96,25 +99,33 @@ queries.
 system without a paper submission in Task 1. Zou et al. use a graph-based
 approach to generate a semantic query graph, which reduced the transformation
 of natural language to SPARQL to a subgraph matching problem.
+
 - TeBaQA by Peter Nancke et al. from Leipzig University in Germany is an
 unpublished system which is based on learning SPARQL templates from past
 benchmark challenges and filling them subsequently. The system is available at
 http://139.18.2.39:8187/.
+
+
 - Elon by Szabó Bence et al. from Paderborn University in Germany stems
 from a student project and is available at http://qald-beta.cs.upb.de:443/.
 It is based on an own dictionary and not yet published.
+
+
 - QASystem by Lukas Blübaum and Nick Düsterhus is also a student project
 from Paderborn University Germany and available at http://qald-beta.cs.
-upb.de:80/. Their system is able to cope with comparatives and superlatives in
-questions via hand-crafted rules.
+upb.de:80/. 
+
+Their system is able to cope with comparatives and superlatives in questions via hand-crafted rules.
 
 ## Conclusion
 
 - The literature survey played a very important role in helping me understand the current state of research in this field.
 
-- Data genertion has been done before, leveraging the work that has already been done will be beneficial.
+- Data genertion has been done before, leveraging the work that has already been done will be beneficial. The qestions are good in terms of templates and can be used effectively.
 
-- Going through the previous implementations, i also came across a point that training final model over DBpedia is a very computationally expensive task. Any addition of entities will cause the model to be modified accordingly.
+- Going through the previous implementations, i also came across a point that training final model over DBpedia is a going to be \a computationally expensive task. Any addition of entities will cause the model to be modified accordingly.
+
+- GERBIL will be used for all evaluations.
 
 - I would like to continue to explore the areas a bit more this weeks and come up with some ideas I have in mind without changing the current timeline.
 
