@@ -106,6 +106,8 @@ upb.de:80/.  Their system is able to cope with comparatives and superlatives in 
 
 
 
+### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
+
 
 
 
