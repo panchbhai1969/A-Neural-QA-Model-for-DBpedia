@@ -15,7 +15,7 @@ done in this field).
 - Understand the people you are working with, finalize all required channels of communication.
 - Understand the current code base in detail, ponder upon all possible improvements and discuss with the mentors.
 
-Lets go over each pint one by one:
+Lets go over each point one by one:
 
 ### Get to know the mentors and the community: listen, communicate and learn.
 
