@@ -102,9 +102,8 @@ upb.de:80/.  Their system is able to cope with comparatives and superlatives in 
 - Going through the previous implementations, I also came across a point that training final model over DBpedia is a going to be a computationally expensive task. Any addition of entities will cause the model to be modified accordingly.
 - GERBIL will be used for all evaluations.
 - There was no task explicitly assigned to me this week so I resorted to the points I mentioned in my proposal and went ahead with the literature survey.
-- I would like to continue to explore the areas a bit more the coming week and come up with some ideas  without changing the current timeline.
-
-
+- I would like to continue to explore the areas a bit more the coming week and come up with some ideas without changing the current timeline. 
+- A more concrete and refined path will be presented by me in the next meeting.
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 

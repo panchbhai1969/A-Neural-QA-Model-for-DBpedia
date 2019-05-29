@@ -45,7 +45,7 @@ over Knowledge Graphs: http://lc-quad.sda.tech/
 3. Seq2SQL: Generating Structured Queries from
 Natural Language using Reinforcement Learning: https://einstein.ai/static/images/pages/research/seq2sql/seq2sql.pdf
 
->> Section will be improved soon
+>> Check out my WeekThree and coming blogs for more details.
 
 ### Understand the people you are working with, finalize all required channels of communications.
 
