@@ -17,3 +17,6 @@ RDF is a directed, labeled graph data format for representing information in the
 |:-------------|:------------------|:-----------|:------|:----|
 | 1           | [The Selection Day](./TheSelectionDay.html) | My proposal was accepted for GSoC this year. A brief overview of my experience.| 8th May 2019  | Zero|
 | 2           | [Week Two](./WeekTwo.html) | Community Bonding Period \| First Meeting | 19th May 2019  | Zero |
+| 3           | [Week Three](./WeekThree.html) | Community Bonding Period \| Literature Survey | 30th May 2019  | Zero |
+| 4          | [Stage 0 Report](./stage0.html) | Community Bonding Period \| Stage Completition Report | 30th May 2019  | Zero |
+

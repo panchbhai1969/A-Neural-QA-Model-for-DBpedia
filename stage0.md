@@ -35,7 +35,7 @@ The work that i did as part of the task is as follows:
 
 ### Go through research paper on the relevant field to come up with good strategies to handle the problems at hand. (Learn from what has already been done in this field).
 
-This ones going to be long, this task ended up using the most amount of time in the 3rd week of community bonding. I read through all the research paper related to my project, here are a few 
+This task ended up using the most amount of time in the 3rd week of community bonding. I read through many the research papers related to my project, here are a few: 
 
 1. LC-QuAD: A Corpus for Complex Question Answering
 over Knowledge Graphs: http://lc-quad.sda.tech/
@@ -53,13 +53,13 @@ Natural Language using Reinforcement Learning: https://einstein.ai/static/images
 
 ### Understand the current code base in detail, ponder upon all possible improvements and discuss with the mentors.
 
-- I went through the whole code and commented a lots of part of the code to increase my understanding of the code as such.
+- I went through the whole code and commented a lots of part of the code to increase my understanding of the code.
 
 - Few improvements were done like the issues i created as per the Week Two blog.
 
 
 
-All the tasks assigned to be done in the community bonding period were done on time. 
+>> All the tasks assigned to be done in the community bonding period were done on time. 
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 
