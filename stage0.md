@@ -23,9 +23,9 @@ The work that i did as part of the task is as follows:
 
 - I initialted the channels of communication with my mentors by creating a private channel in Slack. That is the place where all discussion regarding the project happens. (A mail was sent to the mentors regarding the same by me.)
 
-- The first meeting was organized by one of the mentors, susequest one were created as a recussing event to be held every Monday till the end of GSoC period.
+- The first meeting was organized by one of the mentors, susequest one were created as a recurring event to be held every Monday till the end of GSoC period.
 
-- The menotrs put forward some very important points during the first meeting that i intend to follow during the rest of the GSOC period.
+- The menotrs put forward some very important points during the first meeting that I intend to follow during the rest of the GSOC period.
 
 ### Learn about the intricacies of the coding practices followed by DBpedia, which include coding, community relations as well as version control practices.
 
@@ -54,10 +54,7 @@ Natural Language using Reinforcement Learning: https://einstein.ai/static/images
 ### Understand the current code base in detail, ponder upon all possible improvements and discuss with the mentors.
 
 - I went through the whole code and commented a lots of part of the code to increase my understanding of the code.
-
 - Few improvements were done like the issues i created as per the Week Two blog.
-
-
 
 >> All the tasks assigned to be done in the community bonding period were done on time. 
 
