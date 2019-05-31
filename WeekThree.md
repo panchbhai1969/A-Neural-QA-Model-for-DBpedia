@@ -7,7 +7,7 @@ While doing my older project, I learnt an important aspect of working on somethi
 ### Work done this week:
 
 - Understanding the code base. (mainly template-generation )
-- We will be using GERBIL for all evaluation purposes, I intend to create the script for converting the datsets we have to the format accepted by GERBIL and then let it calculate the scores.(By file upload mechanism)
+- We will be using GERBIL for all evaluation purposes, I intend to create the script for converting the datasets we have to the format accepted by GERBIL and then let it calculate the scores.(By file upload mechanism)
 - Literature Survey.
 
 ---
@@ -43,15 +43,15 @@ While searching for complex Q&A I found about the LCQuAD dataset:
     }
 ```
 
-- The data generation methodology was very similar to Amans but natural language questions were made gramatically correct using human intervention.(By paraphrasing)
+- The data generation methodology was very similar to Amans but natural language questions were made grammatically correct using human intervention.(By paraphrasing)
 
 - The dataset was fairly big compared to other available datasets, we could replace the entities to increase the size of the dataset by many folds. One such application was: https://github.com/hobbit-project/QuestionAnsweringBenchmark
 
 - You can find the paper here: [LC-QuAD: A Corpus for Complex Question Answering over Knowledge Graphs](http://lc-quad.sda.tech/)
 
-- The paper stated that the said dataset was to be later included in QALD8  but the size of the training datset was only 219 questions in QALD8.
+- The paper stated that the said dataset was to be later included in QALD8  but the size of the training dataset was only 219 questions in QALD8.
 
-- The main point here being that a carefully curated datset exists and we should take advantage of it. For template generation. 
+- The main point here being that a carefully curated dataset exists and we should take advantage of it. For template generation. 
 
 ## QALD Benchmark
 
@@ -98,7 +98,7 @@ upb.de:80/.  Their system is able to cope with comparatives and superlatives in 
 ## Conclusion
 
 - The literature survey played a very important role in helping me understand the current state of research in this field.
-- Data genertion has been done before, leveraging the work that has already been done will be beneficial. The qestions are good in terms of templates and can be used effectively.
+- Data generation has been done before, leveraging the work that has already been done will be beneficial. The questions are good in terms of templates and can be used effectively.
 - Going through the previous implementations, I also came across a point that training final model over DBpedia is a going to be a computationally expensive task. Any addition of entities will cause the model to be modified accordingly.
 - GERBIL will be used for all evaluations.
 - There was no task explicitly assigned to me this week so I resorted to the points I mentioned in my proposal and went ahead with the literature survey.
