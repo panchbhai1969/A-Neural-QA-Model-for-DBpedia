@@ -21,17 +21,17 @@ Lets go over each point one by one:
 
 The work that i did as part of the task is as follows:
 
-- I initialted the channels of communication with my mentors by creating a private channel in Slack. That is the place where all discussion regarding the project happens. (A mail was sent to the mentors regarding the same by me.)
+- I initiated the channels of communication with my mentors by creating a private channel in Slack. That is the place where all discussion regarding the project happens. (A mail was sent to the mentors regarding the same by me.)
 
-- The first meeting was organized by one of the mentors, susequest one were created as a recurring event to be held every Monday till the end of GSoC period.
+- The first meeting was organized by one of the mentors, subsequent ones were created as a recurring event to be held every Monday till the end of GSoC period.
 
-- The menotrs put forward some very important points during the first meeting that I intend to follow during the rest of the GSOC period.
+- The mentors put forward some very important points during the first meeting that I intend to follow during the rest of the GSOC period.
 
 ### Learn about the intricacies of the coding practices followed by DBpedia, which include coding, community relations as well as version control practices.
 
 - Methods of collaborating was discussed in the last blog ([Week Two](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekTwo.html)) you can know more about it by going to the previous blog.
 
-- No other aspects where explicity discussed.
+- No other aspects where explicitly discussed.
 
 ### Go through research paper on the relevant field to come up with good strategies to handle the problems at hand. (Learn from what has already been done in this field).
 
