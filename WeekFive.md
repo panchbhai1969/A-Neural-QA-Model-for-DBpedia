@@ -2,9 +2,9 @@
 
 ## Revelation
 
-Huh!, it's been 5 weeks, Now I am able to sense the importance of this project and the inputs expected from me. Till now I have only worked on the weekends for a few hours. But I see now that this approach will not work.
+Huh!, it's been 5 weeks, Now I am able to sense the importance of this project and the inputs expected from me. Till now I have only worked in the weekends for a few hours. But I see now that this approach will not work.
 
-The project demands more commitment from my side, it's working as intended is going to make a huge difference and the possibility of a research paper makes it much more challenging project. In the last meeting I could see that even after a detailed proposal you need to work furthermore to make things happen and work as you want them to, the mentors have been very patient and supportive and I appreciate it. I will be devoting a larger part of my time towards this project, because I really want to contribute in a meaningful manner.
+The project demands more commitment from my side, it's working as intended is going to make a huge difference and the possibility of a research paper makes it a much more challenging project. In the last meeting I could see that even after a detailed proposal you need to work furthermore to make things happen and work as you want them to, the mentors have been very patient and supportive and I appreciate it. I will be devoting a larger part of my time towards this project, because I really want to contribute in a meaningful manner.
 
 Feelings of this revelation apart let's dive into what was done this week ;D.
 
