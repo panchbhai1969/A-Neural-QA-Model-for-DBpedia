@@ -19,4 +19,5 @@ RDF is a directed, labeled graph data format for representing information in the
 | 2           | [Week Two](./WeekTwo.html) | Community Bonding Period \| First Meeting | 19th May 2019  | Zero |
 | 3           | [Week Three](./WeekThree.html) | Community Bonding Period \| Literature Survey | 30th May 2019  | Zero |
 | 4          | [Stage 0 Report](./stage0.html) | Community Bonding Period \| Stage Completition Report | 30th May 2019  | Zero |
+| 5          | [Week Four&Five](./WeekFive.html) | Stage 1 & 2\| The Coding Begins | 11th June 2019  | One & Two |
 
