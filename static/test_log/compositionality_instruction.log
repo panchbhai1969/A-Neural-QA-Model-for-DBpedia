@@ -1,0 +1,1559 @@
+petrichor@DragonFeaster  ~/Projects/GSoC/SOC_Dbpedia/nmt   master  python -m nmt.nmt \
+    --src=en --tgt=sparql \
+    --vocab_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/vocab  \
+    --train_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/train \
+    --dev_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/dev  \
+    --test_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/test \
+    --out_dir=/tmp/nmt_model \
+    --num_train_steps=5000 \
+    --steps_per_stats=100 \
+    --num_layers=2 \
+    --num_units=128 \
+    --dropout=0.2 \
+    --metrics=bleu
+
+# Job id 0
+2019-06-10 19:40:16.168009: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:964] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-06-10 19:40:16.168504: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+name: GeForce GTX 1050 major: 6 minor: 1 memoryClockRate(GHz): 1.493
+pciBusID: 0000:01:00.0
+totalMemory: 3.95GiB freeMemory: 3.18GiB
+2019-06-10 19:40:16.168532: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-06-10 19:40:16.491668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-10 19:40:16.491717: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-06-10 19:40:16.491723: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-06-10 19:40:16.491837: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2893 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0, compute capability: 6.1)
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 6419377499786714771), _DeviceAttributes(/job:localhost/replica:0/task:0/device:GPU:0, GPU, 3034185728, 14101740430935171725)]
+# Creating output directory /tmp/nmt_model ...
+# Vocab file /home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/vocab.en exists
+The first 3 vocab words [templepatrick, wrought-iron, woods] are not [<unk>, <s>, </s>]
+# Vocab file /home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/vocab.sparql exists
+The first 3 vocab words [dbr_Artigoran, dbr_Codorus_Navigation, dbr_Fivemiletown] are not [<unk>, <s>, </s>]
+  saving hparams to /tmp/nmt_model/hparams
+  saving hparams to /tmp/nmt_model/best_bleu/hparams
+  attention=
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=0
+  best_bleu=0
+  best_bleu_dir=/tmp/nmt_model/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  decay_scheme=
+  dev_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/dev
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=uni
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=greedy
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=2
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=2
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=5000
+  num_translations_per_input=1
+  num_units=128
+  optimizer=sgd
+  out_dir=/tmp/nmt_model
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=en
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/tmp/nmt_model/vocab.en
+  src_vocab_size=6394
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/test
+  tgt=sparql
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/tmp/nmt_model/vocab.sparql
+  tgt_vocab_size=5903
+  time_major=True
+  train_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=/home/petrichor/Projects/GSoC/test-neural-qa/data/test2_comp/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+WARNING:tensorflow:From nmt/utils/iterator_utils.py:235: group_by_window (from tensorflow.contrib.data.python.ops.grouping) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.group_by_window(...)`.
+# Creating train graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1WARNING:tensorflow:From nmt/model_helper.py:402: __init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is deprecated, please use tf.nn.rnn_cell.LSTMCell, which supports all the feature this cell currently has. Please replace the existing code with tf.nn.rnn_cell.LSTMCell(name='basic_lstm_cell').
+  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=, start_decay_step=5000, decay_steps 0, decay_factor 1
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (6394, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (5903, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 5903), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (6394, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (5903, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 5903), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_layers = 2, num_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=greedybeam_width=0, length_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (6394, 128), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (5903, 128), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/encoder/rnn/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (256, 512), /device:GPU:0
+  dynamic_seq2seq/decoder/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (512,), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (128, 5903), 
+# log_file=/tmp/nmt_model/log_1560175818
+2019-06-10 19:40:18.551966: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-06-10 19:40:18.552000: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-10 19:40:18.552010: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-06-10 19:40:18.552019: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-06-10 19:40:18.552120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2893 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2019-06-10 19:40:18.552358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-06-10 19:40:18.552399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-10 19:40:18.552407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-06-10 19:40:18.552414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-06-10 19:40:18.552499: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2893 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2019-06-10 19:40:18.552664: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-06-10 19:40:18.552679: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-06-10 19:40:18.552688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-06-10 19:40:18.552696: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-06-10 19:40:18.552754: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 2893 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0, compute capability: 6.1)
+  created train model with fresh parameters, time 0.15s
+  created infer model with fresh parameters, time 0.05s
+  # 347
+    src: what is the location of ridali airfield
+    ref: select var_a where brack_open dbr_Ridali_Airfield <dbo_location> var_a brack_close
+    nmt: dbr_Ballydonnelly dbr_Ballydonnelly dbr_Pont-Hébert dbr_Pont-Hébert dbr_Rânes dbr_California_Citrus_State_Historic_Park dbr_California_Citrus_State_Historic_Park dbr_Tower/Bartizan_of_Porto_Pim dbr_Tower/Bartizan_of_Porto_Pim dbr_Tower/Bartizan_of_Porto_Pim dbr_Lake_Texoma dbr_Balloo,_County_Antrim dbr_Chelers dbr_Chelers
+  created eval model with fresh parameters, time 0.05s
+  eval dev: perplexity 5905.98, time 0s, Mon Jun 10 19:40:19 2019.
+  eval test: perplexity 5905.88, time 0s, Mon Jun 10 19:40:19 2019.
+2019-06-10 19:40:19.945811: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:19.945811: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:19.945816: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+# Start step 0, lr 1, Mon Jun 10 19:40:19 2019
+# Init train iterator, skipping 0 elements
+# Finished an epoch, step 91. Perform external evaluation
+2019-06-10 19:40:23.741690: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:23.741701: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:23.741729: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 904
+    src: where is the district of strâmbu-băiuț river located in
+    ref: select var_a where brack_open dbr_Strâmbu-Băiuț_River dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: dbr_McClellan_Creek_National_Grassland dbr_Sainte-Geneviève-des-Bois,_Loiret dbr_Dundressan dbr_Dundressan dbr_Dundressan dbr_Central_California dbr_Étang_de_Thau dbr_Étang_de_Thau dbr_Étang_de_Thau dbr_Étang_de_Thau dbr_Chattancourt dbr_Chattancourt dbr_Chattancourt dbr_Chattancourt dbr_Poso_Creek dbr_Quintal,_Haute-Savoie dbr_Quintal,_Haute-Savoie dbr_Quintal,_Haute-Savoie
+2019-06-10 19:40:23.796474: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:23.796474: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:23.796475: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 100 lr 1 step-time 0.04s wps 55.95K ppl 21.40 gN 7.03 bleu 0.00, Mon Jun 10 19:40:24 2019
+# Finished an epoch, step 182. Perform external evaluation
+2019-06-10 19:40:27.046300: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:27.046300: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:27.046300: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 1249
+    src: where is the source place of rio nutrias located in
+    ref: select var_a where brack_open dbr_Rio_Nutrias dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: dbr_Kirk_Fell dbr_Chaméane dbr_Ballygortgarve dbr_Ballygortgarve dbr_Yager_Creek dbr_Yager_Creek dbr_Loupiac,_Lot dbr_Loupiac,_Lot dbr_Bunyip_River dbr_Bunyip_River dbr_Bunyip_River dbr_Bunyip_River dbr_Bighead_River dbr_Beargrass_Creek_State_Nature_Preserve dbr_Beargrass_Creek_State_Nature_Preserve dbr_Bighead_River dbr_Itwara_Central_Forest_Reserve dbr_Itwara_Central_Forest_Reserve dbr_Korean_Peninsula dbr_Korean_Peninsula
+2019-06-10 19:40:27.102094: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:27.102107: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:27.102120: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 200 lr 1 step-time 0.03s wps 69.73K ppl 3.66 gN 3.36 bleu 0.00, Mon Jun 10 19:40:28 2019
+# Finished an epoch, step 273. Perform external evaluation
+2019-06-10 19:40:30.337348: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:30.337354: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:30.337378: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 996
+    src: where is the intercommunality of montaud located in
+    ref: select var_a where brack_open dbr_Montaud,_Hérault dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: dbr_Watchhill dbr_Colorado_wine dbr_James_D._Pfluger_Pedestrian_and_Bicycle_Bridge dbr_James_D._Pfluger_Pedestrian_and_Bicycle_Bridge dbr_Estadio_Carlos_Vidaurre_García dbr_Estadio_Carlos_Vidaurre_García dbr_St._Catherine_of_Sienna_Convent dbr_St._Catherine_of_Sienna_Convent dbr_Estadio_Carlos_Vidaurre_García dbr_Burnt_Bridge_Creek dbr_Rasteau_AOC dbr_Lake_District dbr_Lake_District dbr_Poinson-lès-Grancey dbr_Poinson-lès-Grancey dbr_Poinson-lès-Grancey
+2019-06-10 19:40:30.391231: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:30.391247: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:30.391240: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 300 lr 1 step-time 0.03s wps 69.65K ppl 2.89 gN 0.63 bleu 0.00, Mon Jun 10 19:40:31 2019
+# Finished an epoch, step 364. Perform external evaluation
+2019-06-10 19:40:33.655002: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:33.655002: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:33.655012: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 903
+    src: where is the district of isidon river located in
+    ref: select var_a where brack_open dbr_Isidon_River dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: dbr_Qullqi_(Puno) dbr_Larkspur_Creek dbr_Larkspur_Creek dbr_Ridali_Airfield dbr_Écuelles,_Saône-et-Loire dbr_Ridali_Airfield dbr_Ridali_Airfield dbr_Taddle_Creek dbr_Mbhashe_River dbr_Taddle_Creek dbr_Skarrild,_Denmark dbr_Waringstown dbr_Waringstown dbr_Alabaster_Caverns_State_Park dbr_Alabaster_Caverns_State_Park dbr_Alabaster_Caverns_State_Park dbr_Alabaster_Caverns_State_Park dbr_Witham_Navigable_Drains
+2019-06-10 19:40:33.710569: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:33.710583: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:33.710585: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 400 lr 1 step-time 0.04s wps 69.11K ppl 2.79 gN 0.71 bleu 0.00, Mon Jun 10 19:40:35 2019
+# Finished an epoch, step 455. Perform external evaluation
+2019-06-10 19:40:37.026176: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:37.026176: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:37.026176: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 735
+    src: what is the state of graciosa
+    ref: select var_a where brack_open dbr_Graciosa <dbo_state> var_a brack_close
+    nmt: dbr_Owens_River dbr_Nesle-Hodeng dbr_Mușeteica_River dbr_Mușeteica_River dbr_Mușeteica_River dbr_Port_of_Albany–Rensselaer dbr_Port_of_Albany–Rensselaer dbr_Fort_Neoheroka dbr_Fort_Neoheroka dbr_Fort_Neoheroka dbr_Thomas_Jansen_House dbr_Horta_(district)
+2019-06-10 19:40:37.079984: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:37.080027: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:37.080027: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 500 lr 1 step-time 0.04s wps 68.46K ppl 2.79 gN 0.86 bleu 0.00, Mon Jun 10 19:40:39 2019
+# Finished an epoch, step 546. Perform external evaluation
+2019-06-10 19:40:40.427533: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:40.427532: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:40.427534: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 538
+    src: what is the source place of ilba river
+    ref: select var_a where brack_open dbr_Ilba_River <dbo_sourcePlace> var_a brack_close
+    nmt: dbr_Tule_River dbr_Sainte-Geneviève-des-Bois,_Loiret dbr_Sainte-Geneviève-des-Bois,_Loiret dbr_Erloy dbr_Erloy dbr_Erloy dbr_Chli_Windgällen dbr_Chli_Windgällen dbr_Chli_Windgällen dbr_Chli_Windgällen dbr_Grover_Hot_Springs_State_Park dbr_Grover_Hot_Springs_State_Park dbr_Grover_Hot_Springs_State_Park dbr_Nitrianska_Blatnica dbr_Nitrianska_Blatnica dbr_Nitrianska_Blatnica
+2019-06-10 19:40:40.482751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:40.482751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:40.482751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 600 lr 1 step-time 0.04s wps 68.83K ppl 2.68 gN 0.77 bleu 0.00, Mon Jun 10 19:40:42 2019
+# Finished an epoch, step 637. Perform external evaluation
+2019-06-10 19:40:43.835161: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:43.835169: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:43.835169: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 760
+    src: what is the subregion of mendocino county wine
+    ref: select var_a where brack_open dbr_Mendocino_County_wine <dbo_subregion> var_a brack_close
+    nmt: dbr_Henwood_Down dbr_Cross-City_Line dbr_Sutlej dbr_Sutlej dbr_Canal_Age dbr_Canal_Age dbr_Canal_Age dbr_Great_Basin dbr_Maizières,_Haute-Saône dbr_Médoc_AOC dbr_Médoc_AOC dbr_Zegerscappel dbr_Zegerscappel dbr_Worplesdon_railway_station dbr_Favreuil dbr_Favreuil
+2019-06-10 19:40:43.890031: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:43.890031: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:43.890034: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 700 lr 1 step-time 0.04s wps 66.91K ppl 2.66 gN 0.97 bleu 0.00, Mon Jun 10 19:40:46 2019
+# Finished an epoch, step 728. Perform external evaluation
+2019-06-10 19:40:47.326695: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:47.326740: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:47.326773: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.05s
+  # 352
+    src: what is the location of the residences at the ritz-carlton
+    ref: select var_a where brack_open dbr_The_Residences_at_The_Ritz-Carlton_(Philadelphia) <dbo_location> var_a brack_close
+    nmt: dbr_RAF_High_Ercall dbr_Hamilton_Canal dbr_Ballybollen dbr_Ballybollen dbr_St._John's_Episcopal_Church_(Columbia,_Tennessee) dbr_St._John's_Episcopal_Church_(Columbia,_Tennessee) dbr_Aizecourt-le-Haut dbr_Aizecourt-le-Haut dbr_Aizecourt-le-Haut dbr_Otter_Creek_(Hastings_County) dbr_Lagoa_do_Fogo dbr_Lagoa_do_Fogo dbr_Lagoa_do_Fogo dbr_River_Gadder dbr_River_Gadder dbr_River_Mole,_Devon dbr_River_Mole,_Devon dbr_River_Mole,_Devon dbr_River_Mole,_Devon dbr_Lisnarick,_County_Antrim
+2019-06-10 19:40:47.387799: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:47.387811: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:47.387811: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 800 lr 1 step-time 0.04s wps 66.80K ppl 2.58 gN 0.95 bleu 0.00, Mon Jun 10 19:40:50 2019
+# Finished an epoch, step 819. Perform external evaluation
+2019-06-10 19:40:50.833134: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:50.833158: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:50.833180: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  # 1090
+    src: where is the management place of knob noster state park located in
+    ref: select var_a where brack_open dbr_Knob_Noster_State_Park dbo_managementPlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: dbr_Irondequoit_Bay dbr_Irondequoit_Bay dbr_Irondequoit_Bay dbr_Clémery dbr_Clémery dbr_Clémery dbr_Viazac dbr_Viazac dbr_Viazac dbr_Viazac dbr_Is-en-Bassigny dbr_Is-en-Bassigny dbr_Is-en-Bassigny dbr_Is-en-Bassigny dbr_Is-en-Bassigny dbr_Turcarra dbr_Turcarra dbr_Turcarra dbr_Turcarra dbr_Turcarra dbr_Pawnee_River dbr_Pawnee_River dbr_Tarentaise,_Loire dbr_Tarentaise,_Loire
+2019-06-10 19:40:50.897268: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:50.897281: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:50.897281: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.04s
+  step 900 lr 1 step-time 0.04s wps 65.08K ppl 2.51 gN 1.00 bleu 0.00, Mon Jun 10 19:40:54 2019
+# Finished an epoch, step 910. Perform external evaluation
+2019-06-10 19:40:54.434091: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:54.434091: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:54.434124: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  created infer model with fresh parameters, time 0.05s
+  # 172
+    src: what is the highest place of north york moors
+    ref: select var_a where brack_open dbr_North_York_Moors <dbo_highestPlace> var_a brack_close
+    nmt: dbr_Jiříkov dbr_Iavardi_River dbr_Knockmoyle dbr_Knockmoyle dbr_Knockmoyle dbr_Lajes_das_Flores_(parish) dbr_Clogherbog dbr_Clogherbog dbr_Copiapó_(volcano) dbr_Clogherbog dbr_Clogherbog dbr_Levalleglish dbr_Levalleglish dbr_Moutier-Malcard dbr_Moutier-Malcard dbr_Moutier-Malcard dbr_Gârbăul_Mic_River dbr_Gârbăul_Mic_River
+2019-06-10 19:40:54.502168: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:54.502181: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:54.502201: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  created infer model with fresh parameters, time 0.05s
+  step 1000 lr 1 step-time 0.04s wps 64.77K ppl 2.42 gN 1.16 bleu 0.00, Mon Jun 10 19:40:57 2019
+# Save eval, global step 1000
+2019-06-10 19:40:58.222813: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:58.222813: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:58.222814: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 1032
+    src: where is the located in area of fresno dome located in
+    ref: select var_a where brack_open dbr_Fresno_Dome dbo_locatedInArea var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Delegate_River dbo_locatedInArea var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:40:58.266359: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:58.266359: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:58.266370: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+  eval dev: perplexity 2.80, time 0s, Mon Jun 10 19:40:58 2019.
+  eval test: perplexity 2.81, time 0s, Mon Jun 10 19:40:58 2019.
+# Finished an epoch, step 1001. Perform external evaluation
+2019-06-10 19:40:58.843434: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:58.843434: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:58.843446: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 330
+    src: what is the location of american hotel
+    ref: select var_a where brack_open dbr_American_Hotel,_Amsterdam <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Central_Coast_AVA <dbo_county> var_a brack_close
+2019-06-10 19:40:58.880183: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:40:58.880183: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:40:58.880183: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:40:59 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:00 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+# Finished an epoch, step 1092. Perform external evaluation
+2019-06-10 19:41:04.232766: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:04.232766: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:04.232768: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 1355
+    src: where is the start point of nicaragua canal located in
+    ref: select var_a where brack_open dbr_Nicaragua_Canal dbo_startPoint var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Fort_of_São_Pedro_do_Estoril dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:41:04.266831: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:04.266834: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:04.266836: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:04 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:05 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1100 lr 1 step-time 0.04s wps 54.67K ppl 2.32 gN 1.00 bleu 57.63, Mon Jun 10 19:41:06 2019
+# Finished an epoch, step 1183. Perform external evaluation
+2019-06-10 19:41:09.683234: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:09.683248: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:09.683248: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 1415
+    src: where is the state of opeongo river provincial park located in
+    ref: select var_a where brack_open dbr_Opeongo_River_Provincial_Park dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hudson_Highlands_State_Park dbo_startPoint var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:41:09.721735: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:09.721735: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:09.721736: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:10 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:11 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1200 lr 1 step-time 0.04s wps 60.94K ppl 2.23 gN 0.94 bleu 57.63, Mon Jun 10 19:41:12 2019
+# Finished an epoch, step 1274. Perform external evaluation
+2019-06-10 19:41:15.214439: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:15.214462: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:15.214488: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 698
+    src: what is the state of bredbo river
+    ref: select var_a where brack_open dbr_Bredbo_River <dbo_state> var_a brack_close
+    nmt: select var_a where brack_open dbr_Oregon_wine <dbo_subregion> var_a brack_close
+2019-06-10 19:41:15.246193: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:15.246200: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:15.246200: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:15 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:16 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1300 lr 1 step-time 0.04s wps 60.68K ppl 2.11 gN 0.65 bleu 57.63, Mon Jun 10 19:41:18 2019
+# Finished an epoch, step 1365. Perform external evaluation
+2019-06-10 19:41:20.879099: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:20.879099: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:20.879100: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 907
+    src: where is the district of elochoman river located in
+    ref: select var_a where brack_open dbr_Elochoman_River dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Sonoma_County_wine dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:41:20.920982: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:20.920982: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:20.920990: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:21 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:22 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1400 lr 1 step-time 0.04s wps 60.23K ppl 2.05 gN 0.65 bleu 57.63, Mon Jun 10 19:41:24 2019
+# Finished an epoch, step 1456. Perform external evaluation
+2019-06-10 19:41:26.618317: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:26.618343: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:26.618353: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+  # 893
+    src: where is the district of durbav river located in
+    ref: select var_a where brack_open dbr_Durbav_River dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Sonoma_County_wine dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:41:26.658381: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:26.658413: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:26.658413: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:27 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:28 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1500 lr 1 step-time 0.04s wps 56.20K ppl 2.01 gN 0.63 bleu 57.63, Mon Jun 10 19:41:31 2019
+# Finished an epoch, step 1547. Perform external evaluation
+2019-06-10 19:41:33.046644: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:33.046668: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:33.046652: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+  # 110
+    src: what is the district of sărata river
+    ref: select var_a where brack_open dbr_Sărata_River_(Bașeu) <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Central_Coast_AVA <dbo_district> var_a brack_close
+2019-06-10 19:41:33.096468: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:33.096508: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:33.096508: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:41:34 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:35 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1600 lr 1 step-time 0.05s wps 53.77K ppl 1.98 gN 0.63 bleu 57.63, Mon Jun 10 19:41:37 2019
+# Finished an epoch, step 1638. Perform external evaluation
+2019-06-10 19:41:39.244739: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:39.244753: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:39.244751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+  # 513
+    src: what is the region of worondi rivulet
+    ref: select var_a where brack_open dbr_Worondi_Rivulet <dbo_region> var_a brack_close
+    nmt: select var_a where brack_open dbr_Oregon_wine <dbo_municipality> var_a brack_close
+2019-06-10 19:41:39.282652: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:39.282656: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:39.282658: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.02s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:40 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:41:41 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1700 lr 1 step-time 0.14s wps 17.10K ppl 2.01 gN 0.99 bleu 57.63, Mon Jun 10 19:41:55 2019
+# Finished an epoch, step 1729. Perform external evaluation
+2019-06-10 19:41:56.948016: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:56.948017: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:56.948034: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.05s
+  # 1400
+    src: where is the state of white river located in
+    ref: select var_a where brack_open dbr_White_River_(Arkansas) dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hudson_Highlands_State_Park dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:41:57.019524: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:41:57.019525: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:41:57.019567: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.04s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:41:58 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:42:00 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1800 lr 1 step-time 0.07s wps 37.33K ppl 1.94 gN 0.72 bleu 57.63, Mon Jun 10 19:42:04 2019
+# Finished an epoch, step 1820. Perform external evaluation
+2019-06-10 19:42:05.857712: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:05.857712: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:05.857712: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+  # 1307
+    src: where is the source region of portneuf river located in
+    ref: select var_a where brack_open dbr_Portneuf_River_(Idaho) dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Delegate_River dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:05.913691: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:05.913720: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:05.913720: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:42:06 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:08 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 1900 lr 1 step-time 0.05s wps 48.23K ppl 1.91 gN 0.67 bleu 57.63, Mon Jun 10 19:42:12 2019
+# Finished an epoch, step 1911. Perform external evaluation
+2019-06-10 19:42:12.970021: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:12.970024: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:12.970026: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+  # 1231
+    src: where is the source place of isabella river located in
+    ref: select var_a where brack_open dbr_Isabella_River_(New_South_Wales) dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Delegate_River dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:13.019751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:13.019751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:13.019751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-1000, time 0.03s
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:13 2019.
+  bleu dev: 57.6
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 1000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:14 2019.
+  bleu test: 57.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2000 lr 1 step-time 0.05s wps 54.09K ppl 1.88 gN 0.68 bleu 57.63, Mon Jun 10 19:42:19 2019
+# Save eval, global step 2000
+2019-06-10 19:42:19.451351: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:19.451351: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:19.451401: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.02s
+  # 87
+    src: what is the district of sherbourne
+    ref: select var_a where brack_open dbr_Sherbourne,_Warwickshire <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Ingoldsby <dbo_district> var_a brack_close
+2019-06-10 19:42:19.491601: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:19.491602: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:19.491602: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  eval dev: perplexity 2.12, time 0s, Mon Jun 10 19:42:19 2019.
+  eval test: perplexity 2.14, time 0s, Mon Jun 10 19:42:20 2019.
+# Finished an epoch, step 2002. Perform external evaluation
+2019-06-10 19:42:20.163973: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:20.163973: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:20.163981: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 1367
+    src: where is the state of kaweah river located in
+    ref: select var_a where brack_open dbr_Kaweah_River dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Maclaughlin_River dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:20.209732: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:20.209737: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:20.209737: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:21 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:22 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+# Finished an epoch, step 2093. Perform external evaluation
+2019-06-10 19:42:26.585782: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:26.585782: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:26.585807: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 848
+    src: where is the county of european route e51 located in
+    ref: select var_a where brack_open dbr_European_route_E51 dbo_county var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_European_route_E25 dbo_county var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:26.637867: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:26.637887: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:26.637887: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:42:27 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:28 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2100 lr 1 step-time 0.05s wps 44.25K ppl 1.86 gN 0.71 bleu 64.79, Mon Jun 10 19:42:30 2019
+# Finished an epoch, step 2184. Perform external evaluation
+2019-06-10 19:42:33.604448: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:33.604535: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:33.604544: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 982
+    src: where is the intercommunality of neuville-sur-ornain located in
+    ref: select var_a where brack_open dbr_Neuville-sur-Ornain dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Couturelle dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:33.653513: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:33.653546: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:33.653553: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:34 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:35 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2200 lr 1 step-time 0.05s wps 49.94K ppl 1.86 gN 0.88 bleu 64.79, Mon Jun 10 19:42:37 2019
+# Finished an epoch, step 2275. Perform external evaluation
+2019-06-10 19:42:39.979839: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:39.979859: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:39.979847: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 1198
+    src: where is the region of squamish river located in
+    ref: select var_a where brack_open dbr_Squamish_River dbo_region var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Maclaughlin_River dbo_region var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:42:40.024597: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:40.024625: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:40.024625: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:40 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:41 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2300 lr 1 step-time 0.05s wps 53.65K ppl 1.83 gN 0.70 bleu 64.79, Mon Jun 10 19:42:43 2019
+# Finished an epoch, step 2366. Perform external evaluation
+2019-06-10 19:42:46.398233: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:46.398233: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:46.398233: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 128
+    src: what is the district of wulfen
+    ref: select var_a where brack_open dbr_Wulfen <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Ingoldsby <dbo_district> var_a brack_close
+2019-06-10 19:42:46.448935: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:46.448935: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:46.448938: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:42:47 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:42:48 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2400 lr 1 step-time 0.05s wps 49.87K ppl 1.81 gN 0.72 bleu 64.79, Mon Jun 10 19:42:51 2019
+# Finished an epoch, step 2457. Perform external evaluation
+2019-06-10 19:42:53.519097: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:53.519126: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:53.519114: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 63
+    src: what is the county of european route e53
+    ref: select var_a where brack_open dbr_European_route_E53 <dbo_county> var_a brack_close
+    nmt: select var_a where brack_open dbr_European_route_E75 <dbo_county> var_a brack_close
+2019-06-10 19:42:53.566468: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:42:53.566478: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:42:53.566478: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:54 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:42:55 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2500 lr 1 step-time 0.05s wps 52.07K ppl 1.80 gN 0.73 bleu 64.79, Mon Jun 10 19:42:58 2019
+# Finished an epoch, step 2548. Perform external evaluation
+2019-06-10 19:43:00.135585: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:00.135587: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:00.135598: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 1222
+    src: where is the source place of tarlac river located in
+    ref: select var_a where brack_open dbr_Tarlac_River dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hazel_Brook dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:00.187144: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:00.187146: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:00.187157: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:01 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:02 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2600 lr 1 step-time 0.05s wps 51.64K ppl 1.79 gN 0.75 bleu 64.79, Mon Jun 10 19:43:05 2019
+# Finished an epoch, step 2639. Perform external evaluation
+2019-06-10 19:43:06.796489: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:06.796518: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:06.796563: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 1251
+    src: where is the source place of ciorani river located in
+    ref: select var_a where brack_open dbr_Ciorani_River dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hazel_Brook dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:06.842448: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:06.842480: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:06.842480: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:07 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:08 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2700 lr 1 step-time 0.05s wps 52.94K ppl 1.77 gN 0.74 bleu 64.79, Mon Jun 10 19:43:12 2019
+# Finished an epoch, step 2730. Perform external evaluation
+2019-06-10 19:43:13.217869: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:13.217869: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:13.217871: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 73
+    src: what is the district of luppitt
+    ref: select var_a where brack_open dbr_Luppitt <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Ingoldsby <dbo_district> var_a brack_close
+2019-06-10 19:43:13.262561: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:13.262579: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:13.262579: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:14 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:15 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2800 lr 1 step-time 0.05s wps 48.11K ppl 1.76 gN 0.76 bleu 64.79, Mon Jun 10 19:43:19 2019
+# Finished an epoch, step 2821. Perform external evaluation
+2019-06-10 19:43:20.388352: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:20.388352: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:20.388396: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+  # 1225
+    src: where is the source place of cordeaux river located in
+    ref: select var_a where brack_open dbr_Cordeaux_River dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hazel_Brook dbo_sourcePlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:20.439757: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:20.439761: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:20.439762: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.03s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:21 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:22 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 2900 lr 1 step-time 0.06s wps 43.60K ppl 1.75 gN 0.74 bleu 64.79, Mon Jun 10 19:43:27 2019
+# Finished an epoch, step 2912. Perform external evaluation
+2019-06-10 19:43:28.238915: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:28.238916: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:28.238927: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.05s
+  # 1103
+    src: where is the municipality of mont pleasant located in
+    ref: select var_a where brack_open dbr_Mont_Pleasant,_Schenectady,_New_York dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Fajã_dos_Tijolos dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:28.304864: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:28.304885: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:28.304887: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-2000, time 0.04s
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:43:29 2019.
+  bleu dev: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 2000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 2s, Mon Jun 10 19:43:31 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3000 lr 1 step-time 0.08s wps 29.15K ppl 1.74 gN 0.75 bleu 64.79, Mon Jun 10 19:43:40 2019
+# Save eval, global step 3000
+2019-06-10 19:43:40.704816: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:40.704842: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:40.704860: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  # 1422
+    src: where is the subregion of ozark mountain american viticultural area located in
+    ref: select var_a where brack_open dbr_Ozark_Mountain_American_Viticultural_Area dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Convent_of_São_Pedro_de_Alcântara_(São_Roque_do_Pico) dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:40.768477: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:40.768480: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:40.768480: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  eval dev: perplexity 2.06, time 0s, Mon Jun 10 19:43:41 2019.
+  eval test: perplexity 2.09, time 0s, Mon Jun 10 19:43:41 2019.
+# Finished an epoch, step 3003. Perform external evaluation
+2019-06-10 19:43:41.822821: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:41.822853: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:41.822853: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  # 473
+    src: what is the nearest city of roche-a-cri petroglyphs
+    ref: select var_a where brack_open dbr_Roche-a-Cri_Petroglyphs <dbo_nearestCity> var_a brack_close
+    nmt: select var_a where brack_open dbr_Davao_Gulf <dbo_nearestCity> var_a brack_close
+2019-06-10 19:43:41.884722: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:41.884732: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:41.884732: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:43:43 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:43:44 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+# Finished an epoch, step 3094. Perform external evaluation
+2019-06-10 19:43:49.643981: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:49.644031: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:49.644069: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 1422
+    src: where is the subregion of ozark mountain american viticultural area located in
+    ref: select var_a where brack_open dbr_Ozark_Mountain_American_Viticultural_Area dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Convent_of_São_Pedro_de_Alcântara_(São_Roque_do_Pico) dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:43:49.699192: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:49.699213: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:49.699213: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:50 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:51 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3100 lr 1 step-time 0.06s wps 39.58K ppl 1.72 gN 0.77 bleu 65.04, Mon Jun 10 19:43:52 2019
+# Finished an epoch, step 3185. Perform external evaluation
+2019-06-10 19:43:56.413935: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:56.413971: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:56.413989: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 360
+    src: what is the lowest place of great basin
+    ref: select var_a where brack_open dbr_Great_Basin <dbo_lowestPlace> var_a brack_close
+    nmt: select var_a where brack_open dbr_Mohave_Valley <dbo_lowestPlace> var_a brack_close
+2019-06-10 19:43:56.459747: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:43:56.459760: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:43:56.459760: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:57 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:43:58 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3200 lr 1 step-time 0.05s wps 48.98K ppl 1.72 gN 0.80 bleu 65.04, Mon Jun 10 19:44:00 2019
+# Finished an epoch, step 3276. Perform external evaluation
+2019-06-10 19:44:03.371872: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:03.371886: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:03.371949: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  # 775
+    src: what is the subregion of quebec wine
+    ref: select var_a where brack_open dbr_Quebec_wine <dbo_subregion> var_a brack_close
+    nmt: select var_a where brack_open dbr_Oregon_wine <dbo_subregion> var_a brack_close
+2019-06-10 19:44:03.427706: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:03.427713: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:03.427715: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:04 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:05 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3300 lr 1 step-time 0.05s wps 45.63K ppl 1.71 gN 0.77 bleu 65.04, Mon Jun 10 19:44:08 2019
+# Finished an epoch, step 3367. Perform external evaluation
+2019-06-10 19:44:11.024170: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:11.024170: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:11.024174: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 1432
+    src: where is the subregion of tennessee wine located in
+    ref: select var_a where brack_open dbr_Tennessee_wine dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Oregon_wine dbo_subregion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:44:11.078356: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:11.078391: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:11.078391: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:12 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:13 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3400 lr 1 step-time 0.05s wps 47.52K ppl 1.71 gN 0.82 bleu 65.04, Mon Jun 10 19:44:15 2019
+# Finished an epoch, step 3458. Perform external evaluation
+2019-06-10 19:44:18.239570: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:18.239590: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:18.239619: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  # 466
+    src: what is the nearest city of udzungwa mountains national park
+    ref: select var_a where brack_open dbr_Udzungwa_Mountains_National_Park <dbo_nearestCity> var_a brack_close
+    nmt: select var_a where brack_open dbr_Laguna_de_Gallocanta <dbo_nearestCity> var_a brack_close
+2019-06-10 19:44:18.298944: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:18.298945: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:18.298957: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:19 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:21 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3500 lr 1 step-time 0.06s wps 42.52K ppl 1.70 gN 0.84 bleu 65.04, Mon Jun 10 19:44:24 2019
+# Finished an epoch, step 3549. Perform external evaluation
+2019-06-10 19:44:26.946137: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:26.946150: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:26.946151: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+  # 585
+    src: what is the source place of văruțu river
+    ref: select var_a where brack_open dbr_Văruțu_River <dbo_sourcePlace> var_a brack_close
+    nmt: select var_a where brack_open dbr_Gârbou_River <dbo_sourcePlace> var_a brack_close
+2019-06-10 19:44:27.000454: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:27.000462: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:27.000464: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:28 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:29 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3600 lr 1 step-time 0.05s wps 46.97K ppl 1.68 gN 0.77 bleu 65.04, Mon Jun 10 19:44:32 2019
+# Finished an epoch, step 3640. Perform external evaluation
+2019-06-10 19:44:34.133618: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:34.133636: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:34.133652: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 1102
+    src: where is the municipality of markeaton brook located in
+    ref: select var_a where brack_open dbr_Markeaton_Brook dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Plum_Run_(Rock_Creek) dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:44:34.192520: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:34.192523: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:34.192523: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:35 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:36 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3700 lr 1 step-time 0.05s wps 47.70K ppl 1.68 gN 0.79 bleu 65.04, Mon Jun 10 19:44:40 2019
+# Finished an epoch, step 3731. Perform external evaluation
+2019-06-10 19:44:41.396674: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:41.396687: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:41.396699: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 1362
+    src: where is the state of chitose river located in
+    ref: select var_a where brack_open dbr_Chitose_River dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Bendoc_River dbo_state var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:44:41.450087: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:41.450108: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:41.450091: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:42 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:44:43 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3800 lr 1 step-time 0.05s wps 47.47K ppl 1.67 gN 0.80 bleu 65.04, Mon Jun 10 19:44:47 2019
+# Finished an epoch, step 3822. Perform external evaluation
+2019-06-10 19:44:48.699386: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:48.699386: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:48.699388: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 842
+    src: where is the county of european route e717 located in
+    ref: select var_a where brack_open dbr_European_route_E717 dbo_county var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_European_route_E20 dbo_county var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:44:48.755358: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:48.755364: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:48.755367: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.04s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:49 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:50 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 3900 lr 1 step-time 0.05s wps 51.37K ppl 1.67 gN 0.82 bleu 65.04, Mon Jun 10 19:44:54 2019
+# Finished an epoch, step 3913. Perform external evaluation
+2019-06-10 19:44:55.402003: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:55.402039: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:55.402054: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+  # 316
+    src: what is the location of dennis otte round barn
+    ref: select var_a where brack_open dbr_Dennis_Otte_Round_Barn <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Toro_Negro_State_Forest <dbo_location> var_a brack_close
+2019-06-10 19:44:55.452498: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:44:55.452514: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:44:55.452498: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-3000, time 0.03s
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:56 2019.
+  bleu dev: 65.0
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 3000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:44:57 2019.
+  bleu test: 64.5
+  saving hparams to /tmp/nmt_model/hparams
+  step 4000 lr 1 step-time 0.06s wps 43.05K ppl 1.68 gN 1.03 bleu 65.04, Mon Jun 10 19:45:02 2019
+# Save eval, global step 4000
+2019-06-10 19:45:03.139985: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:03.139996: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:03.139997: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+  # 1297
+    src: where is the source region of river rase located in
+    ref: select var_a where brack_open dbr_River_Rase dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_River_Gowy dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:45:03.197012: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:03.197012: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:03.197013: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  eval dev: perplexity 2.04, time 0s, Mon Jun 10 19:45:03 2019.
+  eval test: perplexity 2.08, time 0s, Mon Jun 10 19:45:03 2019.
+# Finished an epoch, step 4004. Perform external evaluation
+2019-06-10 19:45:04.101721: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:04.101733: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:04.101782: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+  # 546
+    src: what is the source place of yalmy river
+    ref: select var_a where brack_open dbr_Yalmy_River <dbo_sourcePlace> var_a brack_close
+    nmt: select var_a where brack_open dbr_Gârbou_River <dbo_sourcePlace> var_a brack_close
+2019-06-10 19:45:04.154202: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:04.154247: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:04.154262: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:05 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:45:06 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+# Finished an epoch, step 4095. Perform external evaluation
+2019-06-10 19:45:11.376520: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:11.376537: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:11.376566: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 1153
+    src: where is the municipality of muscott located in
+    ref: select var_a where brack_open dbr_Muscott_(lost_settlement) dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Fajãzinha dbo_municipality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:45:11.434109: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:11.434109: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:11.434110: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:12 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:45:13 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4100 lr 1 step-time 0.06s wps 39.26K ppl 1.65 gN 0.80 bleu 65.10, Mon Jun 10 19:45:15 2019
+# Finished an epoch, step 4186. Perform external evaluation
+2019-06-10 19:45:19.909833: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:19.909866: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:19.909867: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 121
+    src: what is the district of římov
+    ref: select var_a where brack_open dbr_Římov_(České_Budějovice_District) <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Sosa,_Germany <dbo_district> var_a brack_close
+2019-06-10 19:45:19.964414: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:19.964419: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:19.964419: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:21 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:22 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4200 lr 1 step-time 0.06s wps 38.16K ppl 1.65 gN 0.81 bleu 65.10, Mon Jun 10 19:45:24 2019
+# Finished an epoch, step 4277. Perform external evaluation
+2019-06-10 19:45:27.485869: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:27.485918: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:27.485869: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+  # 664
+    src: what is the start point of boyne navigation
+    ref: select var_a where brack_open dbr_Boyne_Navigation <dbo_startPoint> var_a brack_close
+    nmt: select var_a where brack_open dbr_Alamo_Canal <dbo_startPoint> var_a brack_close
+2019-06-10 19:45:27.534451: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:27.534460: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:27.534460: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.03s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:45:28 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:45:29 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4300 lr 1 step-time 0.05s wps 47.06K ppl 1.64 gN 0.80 bleu 65.10, Mon Jun 10 19:45:31 2019
+# Finished an epoch, step 4368. Perform external evaluation
+2019-06-10 19:45:34.873864: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:34.873864: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:34.873880: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.05s
+  # 1169
+    src: where is the region of andranotsimisiamalona river located in
+    ref: select var_a where brack_open dbr_Andranotsimisiamalona_River dbo_region var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Delegate_River dbo_region var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:45:34.941065: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:34.941090: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:34.941079: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:36 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:37 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4400 lr 1 step-time 0.06s wps 42.43K ppl 1.63 gN 0.81 bleu 65.10, Mon Jun 10 19:45:40 2019
+# Finished an epoch, step 4459. Perform external evaluation
+2019-06-10 19:45:43.554697: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:43.554720: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:43.554711: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 295
+    src: what is the located in area of creu de santos
+    ref: select var_a where brack_open dbr_Creu_de_Santos <dbo_locatedInArea> var_a brack_close
+    nmt: select var_a where brack_open dbr_Pic_de_Finestrelles <dbo_locatedInArea> var_a brack_close
+2019-06-10 19:45:43.610197: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:43.610201: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:43.610201: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:44 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:45:45 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4500 lr 1 step-time 0.05s wps 47.64K ppl 1.63 gN 0.80 bleu 65.10, Mon Jun 10 19:45:48 2019
+# Finished an epoch, step 4550. Perform external evaluation
+2019-06-10 19:45:50.656769: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:50.656773: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:50.656810: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 963
+    src: where is the intercommunality of magneux located in
+    ref: select var_a where brack_open dbr_Magneux,_Marne dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Sailly-Saillisel dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:45:50.716640: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:50.716659: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:50.716644: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:51 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:45:52 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4600 lr 1 step-time 0.06s wps 41.21K ppl 1.62 gN 0.81 bleu 65.10, Mon Jun 10 19:45:57 2019
+# Finished an epoch, step 4641. Perform external evaluation
+2019-06-10 19:45:59.134708: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:59.134729: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:59.134754: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 1088
+    src: where is the management place of ha ha tonka state park located in
+    ref: select var_a where brack_open dbr_Ha_Ha_Tonka_State_Park dbo_managementPlace var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Delaware_and_Lehigh_National_Heritage_Corridor dbo_managementPlace var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:45:59.199384: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:45:59.199404: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:45:59.199396: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:00 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:01 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4700 lr 1 step-time 0.06s wps 43.61K ppl 1.62 gN 0.82 bleu 65.10, Mon Jun 10 19:46:05 2019
+# Finished an epoch, step 4732. Perform external evaluation
+2019-06-10 19:46:06.985900: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:06.985913: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:06.985913: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 1003
+    src: where is the intercommunality of les monthairons located in
+    ref: select var_a where brack_open dbr_Les_Monthairons dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_La_Milesse dbo_intercommunality var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:46:07.046283: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:07.046283: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:07.046286: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:08 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:09 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4800 lr 1 step-time 0.05s wps 45.51K ppl 1.61 gN 0.84 bleu 65.10, Mon Jun 10 19:46:13 2019
+# Finished an epoch, step 4823. Perform external evaluation
+2019-06-10 19:46:14.750348: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:14.750350: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:14.750350: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+  # 111
+    src: what is the district of repedea river
+    ref: select var_a where brack_open dbr_Repedea_River_(Ruscova) <dbo_district> var_a brack_close
+    nmt: select var_a where brack_open dbr_Bârgău_River_(Boura) <dbo_district> var_a brack_close
+2019-06-10 19:46:14.808127: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:14.808155: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:14.808155: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:15 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:17 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 4900 lr 1 step-time 0.07s wps 32.86K ppl 1.61 gN 0.83 bleu 65.10, Mon Jun 10 19:46:23 2019
+# Finished an epoch, step 4914. Perform external evaluation
+2019-06-10 19:46:24.706677: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:24.706738: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:24.706758: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.05s
+  # 1301
+    src: where is the source region of beas river located in
+    ref: select var_a where brack_open dbr_Beas_River dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Hinglo_River dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:46:24.775294: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:24.775298: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:24.775303: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-4000, time 0.04s
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:26 2019.
+  bleu dev: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 4000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:27 2019.
+  bleu test: 64.8
+  saving hparams to /tmp/nmt_model/hparams
+  step 5000 lr 1 step-time 0.06s wps 42.96K ppl 1.60 gN 0.82 bleu 65.10, Mon Jun 10 19:46:32 2019
+# Save eval, global step 5000
+2019-06-10 19:46:32.861091: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:32.861110: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:32.861091: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.03s
+  # 878
+    src: where is the district of horná krupá located in
+    ref: select var_a where brack_open dbr_Horná_Krupá dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Stará_Paka dbo_district var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:46:32.917741: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:32.917741: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:32.917741: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.04s
+  eval dev: perplexity 2.03, time 0s, Mon Jun 10 19:46:33 2019.
+  eval test: perplexity 2.07, time 0s, Mon Jun 10 19:46:33 2019.
+2019-06-10 19:46:33.862504: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:33.862507: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:33.862516: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.03s
+  # 1287
+    src: where is the source region of lochsa river located in
+    ref: select var_a where brack_open dbr_Lochsa_River dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+    nmt: select var_a where brack_open dbr_Kampar_River dbo_sourceRegion var_b sep_dot var_b <dbo_location> var_a brack_close
+2019-06-10 19:46:33.916734: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:33.916759: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:33.916759: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.03s
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:34 2019.
+  bleu dev: 65.3
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:36 2019.
+  bleu test: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+2019-06-10 19:46:36.783164: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:36.783167: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:36.783169: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.03s
+  # 225
+    src: what is the intercommunality of doullens
+    ref: select var_a where brack_open dbr_Doullens <dbo_intercommunality> var_a brack_close
+    nmt: select var_a where brack_open dbr_Camblain-Châtelain <dbo_intercommunality> var_a brack_close
+2019-06-10 19:46:36.836101: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:36.836107: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:36.836109: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.04s
+  eval dev: perplexity 2.03, time 0s, Mon Jun 10 19:46:37 2019.
+  eval test: perplexity 2.07, time 0s, Mon Jun 10 19:46:37 2019.
+2019-06-10 19:46:37.617511: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:37.617532: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:37.617532: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/translate.ckpt-5000, time 0.04s
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:38 2019.
+  bleu dev: 65.3
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:46:39 2019.
+  bleu test: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# Final, step 5000 lr 1 step-time 0.06s wps 42.96K ppl 1.60 gN 0.82 dev ppl 2.03, dev bleu 65.3, test ppl 2.07, test bleu 65.1, Mon Jun 10 19:46:40 2019
+# Done training!, time 380s, Mon Jun 10 19:46:40 2019.
+# Start evaluating saved best models.
+2019-06-10 19:46:40.241799: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:40.241804: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:40.241805: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/best_bleu/translate.ckpt-5000, time 0.03s
+  # 682
+    src: what is the start point of mersey and irwell navigation
+    ref: select var_a where brack_open dbr_Mersey_and_Irwell_Navigation <dbo_startPoint> var_a brack_close
+    nmt: select var_a where brack_open dbr_Neath_and_Tennant_Canal <dbo_startPoint> var_a brack_close
+2019-06-10 19:46:40.294504: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:40.294504: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:40.294505: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded eval model parameters from /tmp/nmt_model/best_bleu/translate.ckpt-5000, time 0.04s
+  eval dev: perplexity 2.03, time 0s, Mon Jun 10 19:46:40 2019.
+  eval test: perplexity 2.07, time 0s, Mon Jun 10 19:46:40 2019.
+2019-06-10 19:46:41.012886: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.en is already initialized.
+2019-06-10 19:46:41.012920: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+2019-06-10 19:46:41.012920: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_model/vocab.sparql is already initialized.
+  loaded infer model parameters from /tmp/nmt_model/best_bleu/translate.ckpt-5000, time 0.04s
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_dev
+  done, num sentences 1433, num translations per input 1, time 1s, Mon Jun 10 19:46:42 2019.
+  bleu dev: 65.3
+  saving hparams to /tmp/nmt_model/hparams
+# External evaluation, global step 5000
+  decoding to output /tmp/nmt_model/output_test
+  done, num sentences 1433, num translations per input 1, time 0s, Mon Jun 10 19:46:43 2019.
+  bleu test: 65.1
+  saving hparams to /tmp/nmt_model/hparams
+# Best bleu, step 5000 lr 1 step-time 0.06s wps 42.96K ppl 1.60 gN 0.82 dev ppl 2.03, dev bleu 65.3, test ppl 2.07, test bleu 65.1, Mon Jun 10 19:46:43 2019
