@@ -1,6 +1,3 @@
----
-image: /static/project.png
----
 #  A Neural QA Model for DBpedia 
 
 With booming amount of information being continuously added to the internet, organising the facts becomes a very difficult task. Currently DBpedia hosts billions of such data points and corresponding relations in the RDF format.  
