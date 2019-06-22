@@ -22,20 +22,20 @@ In my proposal, I had laid down a tentative pseudo code to be followed and this 
 
 ### Generate URL
 
-The first task was to create a URL generator, the main aim was to create something related to the follwing:
+The first task was to create a URL generator, the main aim was to create something related to the following:
 
-```psuedo
+```pseudo
 generate_url​ (namespace,class){
 
-        - This function generates a proper url to extract information about class, properties and
-        data types from the DBpedia database.
-        (Like:​ http://mappings.dbpedia.org/server/ontology/classes/Place​ )
+       - This function generates a proper url to extract information about class, properties and
+       data types from the DBpedia database.
+       (Like:​ http://mappings.dbpedia.org/server/ontology/classes/Place​ )
 
-        - It returns a url string to the calling function.
+       - It returns a url string to the calling function.
 }
 ```
 
-- To accomplish this, an owl file containing all ontoogy related details was used, [Owl File](http://mappings.dbpedia.org/server/ontology/dbpedia.owl). Based on the label first corresponding derived from page's URL was extracted by parsing the owl file.
+- To accomplish this, an owl file containing all ontology related details was used, [Owl File](http://mappings.dbpedia.org/server/ontology/dbpedia.owl). Based on the label first corresponding derived from page's URL was extracted by parsing the owl file.
 
 - The page related to this URL contained the URL of the corresponding properties page for the given entity of the form:
 
@@ -59,7 +59,7 @@ python generate_url.py --label person
 http://mappings.dbpedia.org/index.php/OntologyClass:Person
 ```
 
-- The first link on the page sorresponding to this URL contained the link to the properties page we were looking for, the whole process was coded to happend automativally. Necessary conditions were put in place to handle exceptions:
+- The first link on the page corresponding to this URL contained the link to the properties page we were looking for, the whole process was coded to happen automatically. Necessary conditions were put in place to handle exceptions:
 
 ```url
 http://mappings.dbpedia.org/server/ontology/classes/Person
@@ -67,18 +67,18 @@ http://mappings.dbpedia.org/server/ontology/classes/Person
 
 ### Get Properties
 
-Once the generate_URL page returned the URL of the properties page of the given entity, the function detched the page and extracted the name, label, range and domain of the property.
+Once the generate_URL page returned the URL of the properties page of the given entity, the function detached the page and extracted the name, label, range and domain of the property.
 
 ```pseudo
 get_properties​ (url){
-    - This function takes in a url or name of the namespace and class as input like
-    get_properties.py code in the current
-    codebase(​ https://github.com/AKSW/NSpM/blob/master/gsoc/aman/get_properties.py
-    this function takes only a url only).
-    -  This code on execution creates a csv which contains all the properties, ontology,
-    class related information and data types as field values in each row.
-    -  This function also returns a 2D list of the information mentioned above to the calling
-    function.
+   - This function takes in a url or name of the namespace and class as input like
+   get_properties.py code in the current
+   codebase(​ https://github.com/AKSW/NSpM/blob/master/gsoc/aman/get_properties.py
+   this function takes only a url only).
+   -  This code on execution creates a csv which contains all the properties, ontology,
+   class related information and data types as field values in each row.
+   -  This function also returns a 2D list of the information mentioned above to the calling
+   function.
 }
 ```
 
@@ -95,21 +95,21 @@ Part of extracted properties:
 
 | Name     |     Label      |   Domain   | Range |
 |----------|:-------------:|-------:|-------:|
-| achievement  | 	achievement	|Person	|owl:Thing	|
-| activeYears |	active years |	Person |	xsd:string|
-| activeYearsEndDateMgr |	active years end date manager |	Person |	xsd:string |
-    
+| achievement  |    achievement |Person |owl:Thing  |
+| activeYears | active years |  Person |    xsd:string|
+| activeYearsEndDateMgr |   active years end date manager | Person |    xsd:string |
+  
 
 ### Sentence and template generator
 
 Well, this is a tricky and cool one. Let's dive straight into it.
 
-With the help of the 2 functions defined previously we get the following information abot the given label:
+With the help of the 2 functions defined previously we get the following information about the given label:
 
-- *URL of the properties page of the entty with given label*
+- *URL of the properties page of the entity with given label*
 - *Properties corresponding to the given label with their Name, label, domain and range*
 
-Now it's time to brew some question, SPARQL query and query get entities to fill the templated to be used by the NSPM model. To give you a brief of what each of these terms mean let me give you and example:
+Now it's time to brew some question, SPARQL query and query get entities to fill the templated to be used by the NSPM model. To give you a brief of what each of these terms mean let me give you an example:
 
 - Natural language question template: `When is the  birth date of <A> ?`
 - SPARQL query template: `select ?x where { <A>  dbo:birthDate ?x }`
@@ -155,7 +155,7 @@ With these aspects clear, another point to be noted is the structure of the outp
 
 Ontology 1 | Cell 2 | Ontology 2 (verify) | Natural Language query Template | SPARQL query template | Compatible entities fetcher template |
 |:----|:----|:----|:----|:----|:----|
-dbo:Person ||| When is the  birth date of <A> ?	| select ?x where { <A>  dbo:birthDate ?x } | select distinct(?a) where { ?a dbo:birthDate []  } |
+dbo:Person ||| When is the  birth date of <A> ? | select ?x where { <A>  dbo:birthDate ?x } | select distinct(?a) where { ?a dbo:birthDate []  } |
 
 ---
 
@@ -194,8 +194,8 @@ Now for generating viable SPARQL query, we divide a query into 3 parts:
 (query_starts_with[number]+"where { <A>  "+ query_suffix + prop_link  +" ?x "+ query_ends_with[number])
 ```
 
-- query_starts_with: defines how the query should start. i.e. select ?x or select count(*) as ?x etc. 
-- query_suffix: Determines the moddle part of the query used mainly in recursive query generation, to be discussed shortly.
+- query_starts_with: defines how the query should start. i.e. select ?x or select count(*) as ?x etc.
+- query_suffix: Determines the middle part of the query used mainly in recursive query generation, to be discussed shortly.
 - prop_link: contains the URI of the property in the shortened format, like dbo:spouse for `http://dbpedia.org/ontology/spouse`.
 - query_ends_with: defines how the query should end. i.e. `} order by ?x limit 1` or `} order by ?x limit 1` etc.
 
@@ -215,17 +215,17 @@ select ?x where { <A>  dbo:birthDate ?x }
 
 *Compatible entities fetcher template*
 
-We are about to wander in a bit interesting areas, stride carefully. This template generation depends on few conditions:
+We are about to wander in a bit interesting areas, stride carefully. This template generation depends on a few conditions:
 
 ```python
 if(query_suffix==""):
-        query_answer = ("select distinct(?a) where { ?a "+prop_link+" []  } ")
-    else :
-        query_answer = ("select distinct(?a) where { ?a "+query_suffix.split(" ")[0]+" [] . ?a  "+query_suffix +" "+ prop_link +" ?x } ")
+       query_answer = ("select distinct(?a) where { ?a "+prop_link+" []  } ")
+   else :
+       query_answer = ("select distinct(?a) where { ?a "+query_suffix.split(" ")[0]+" [] . ?a  "+query_suffix +" "+ prop_link +" ?x } ")
 
 ```
 
-No new variable are used for this part, i will just give an example for the first case here the second one is relevant in recursive questiona and query generation.
+No new variables are used for this part, I will just give an example for the first case here the second one is relevant in recursive questions and query generation.
 
 Example:
 
@@ -242,13 +242,13 @@ select distinct(?a) where { ?a dbo:birthDate []  }
 
 Recursive question-query generation:
 
-There is one more important variable we have to look into before moving forward, it kees track of the variable name used in SPARQL queries in each iteration. Count updates accordingly in the later part of the code:
+There is one more important variable we have to look into before moving forward, it keeps track of the variable name used in SPARQL queries in each iteration. Count updates accordingly in the later part of the code:
 
 ```python
 if(count == 0):
-        variable = "?x"
-    else:
-        variable = "?x"+ str(count) 
+       variable = "?x"
+   else:
+       variable = "?x"+ str(count)
 ```
 
 To generate recursive query we just update some of the variables before going into the next loop:
@@ -264,7 +264,7 @@ Example:
 
 - Natural language question: `What is the  anthem of birth place of <A> ?`
 - SPARQL query: `select ?x where { <A>  dbo:birthPlace ?x1 . ?x1 dbo:anthem ?x  }`
-- Compatiple entities fetcher: `select distinct(?a) where { ?a dbo:birthPlace [] . ?a  dbo:birthPlace ?x1 . ?x1  dbo:anthem ?x }`
+- Compatible entities fetcher: `select distinct(?a) where { ?a dbo:birthPlace [] . ?a  dbo:birthPlace ?x1 . ?x1  dbo:anthem ?x }`
 
 ---
 
@@ -282,15 +282,15 @@ All these functions are then properly wrapped in a function called `generate_tem
 
 ## Push all the changes to the repository properly
 
-Pull request with all the updates was made: [https://github.com/dbpedia/neural-qa/pull/14#issue-288853232](https://github.com/dbpedia/neural-qa/pull/14#issue-288853232) 
+Pull request with all the updates was made: [https://github.com/dbpedia/neural-qa/pull/14#issue-288853232](https://github.com/dbpedia/neural-qa/pull/14#issue-288853232)
 
 ```md
 # Update 17th June 2019
 ## Stage 0
-### Community Bonding period fixes 
-- #12  #9 
-## Stage 1 | 2 | 3 (Refer to Anand's proposal for reference) 
-###  gsoc/ folder 
+### Community Bonding period fixes
+- #12  #9
+## Stage 1 | 2 | 3 (Refer to Anand's proposal for reference)
+###  gsoc/ folder
 - Aman's pipeline was streamlined and automated
 - All the inconsistencies and the flow works as intended
 - The whole code in gsoc/anand was made python 3 compatible
@@ -303,14 +303,16 @@ Pull request with all the updates was made: [https://github.com/dbpedia/neural-q
 - Answer query done
 - Multiple type of question based on entity range done: more will be added
 - Testing on nmt Model done with BLEU > 95 (log present in working-gsoc-anand branch)
-### NMT sub-module updated to current master:  Updated to 0be864257a76c151eef20ea689755f08bc1faf4e 
- - #11
+### NMT sub-module updated to current master:  Updated to 0be864257a76c151eef20ea689755f08bc1faf4e
+- #11
 ```
 
 ## Update the blogs
- Updated: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html)
+Updated: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html)
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
+
+
 
 
 
