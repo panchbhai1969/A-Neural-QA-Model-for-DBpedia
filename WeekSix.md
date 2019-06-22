@@ -16,7 +16,7 @@ After last weeks realisation I spent a large part of my week coding, commiting a
 
 ## Generating domain independent templates to minimize burden on the end user for both complex and simple QA
 
-Note ALl links here are with respect to repository: https://github.com/dbpedia/neural-qa/tree/bd65938173367126f69d4d1bd04d5644be6572ce
+Note ALl links here are with respect to repository: [https://github.com/dbpedia/neural-qa/tree/bd65938173367126f69d4d1bd04d5644be6572ce](https://github.com/dbpedia/neural-qa/tree/bd65938173367126f69d4d1bd04d5644be6572ce)
 
 In my proposal, I had laid down a tentative pseudo code to be followed and this week I implemented a hefty part of it, let's dive into the nitty gritty:
 
@@ -152,6 +152,7 @@ Natural language question| `When is the birth date of olga kurylenko ?`|
 SPARQL query| `select ?x where { dbr:Olga_Kurylenko dbo:birthDate ?x }`|
 
 With these aspects clear, another point to be noted is the structure of the output file to be compatible with the NsPM model (`;` seperated):
+
 Ontology 1 | Cell 2 | Ontology 2 (verify) | Natural Language query Template | SPARQL query template | Compatible entities fetcher template |
 |:----|:----|:----|:----|:----|:----|
 dbo:Person ||| When is the  birth date of <A> ?	| select ?x where { <A>  dbo:birthDate ?x } | select distinct(?a) where { ?a dbo:birthDate []  } |
