@@ -1,6 +1,6 @@
 # Week Six | Stage 3 | Code Crusade Week
 
-Well, Well, Well, A  properly spent week I would say. A lot of coding and a lot of things to share here. Lets dive straight into it Savvy!
+Well, Well, Well, A  properly spent week I would say. A lot of coding and a lot of things to share here. Lets dive straight into it, Savvy!
 
 <span align="center"> ![Savvy](static/savvy.gif) </span>
 
@@ -310,8 +310,7 @@ Pull request with all the updates was made: [https://github.com/dbpedia/neural-q
 ## Update the blogs
  Updated: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFive.html)
 
-
-
+### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 
 
 
