@@ -1,5 +1,5 @@
 ---
-image: /static/dive.gif
+image: /static/project.png
 ---
 #  A Neural QA Model for DBpedia 
 
