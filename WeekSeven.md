@@ -1,12 +1,32 @@
 # WeekSeven | Stage 3 | Looking Beyond: making questions more human
 
-## Brain Storming
+Pretty cool week! Here are the tasks I was upposed to accomplish this week:
+
+- Fixing the issues with GERBIL
+- F1 Score
+- More compositionality based on the mentor’s suggestions.
+  - Make questions more natural and near to what people will really ask.
+- Make the model learm for a longer time.
+
+## Fixing the issues with GERBIL & F1 Score
+
+Boy!, this was a task that I had to carry on for weeks as undone in my meeting. Finally it is completed and working like a charm, it's a bit slow but working! 
+
+![GERBIL Result](static/gerbil_working.png)
+
+Apart from that here is a poratl I made for Q&A, its pretty nice. I don't have a public IP will try to host it somewhere:
+
+![Portal](static/portal_working.png)
+
+## More on compositionality based on the mentor’s suggestions
+
+### Brain Storming
 
 This came out to be an interesting week with me diving in deep in thoughts regarding what methods to use to tackle the problem that arised in the previous meeting, which was:
 
 >> The question seem to be useful but, they are at time nonsensical and grammatically incorrect. Thus they donot represnt real questions that the end system will encounter.
 
-So, it was time to get back to analysing what could be done!, lets first bring all ideas that came up in the meeting together:
+So, it was time to get back to analysing what could be done!, lets first bring all the ideas that came up in the meeting together:
 
 ![Analysis](static/analysis.gif)
 
@@ -54,7 +74,7 @@ Using this hypothesis I moved on to checking the viability of above said stateme
 
 ![SUB first 50 Ranks](static/sub_50.png)
 
-In my opinion that does sound like it could capture the current trends very well :D. I did ponder upon other methods but this appliation of Subjective3D seemed like the best fit for my use case.
+In my opinion that does sound like it could capture the current trends very well :D. I did ponder upon other methods but this appliation of SubjectiveEye3D seemed like the best fit for my use case.
 
 ---
 
@@ -140,14 +160,24 @@ So here is what was done: ([https://github.com/dbpedia/neural-qa/tree/73937ac9e7
 
     - 0.85 was selected as dampning factor in a rather empirical manner, following the probabilty arrived in the *The Anantomy of Large-Scale Hypertextual Web Search Engine - by Sergey Brin and Lawrence Page* for each page.
     - For each set of entities the rank was then further divided by the number of entities whose rank was successfully fetched.
-    - These question specific ranks were then further accumulated and divided by the total number of compatible entities fetched (max 100).
+    - These question specific ranks were then further accumulated and divided by the total number of compatible entities fetched (max 100, in random order! to ensure the score are not too biased).
     - The resulting value was returned as the final rank
+
 ### Results
 
 The results were the most fascinating part, here is a small part of it. The color in the G column rows signify the degree to what the given question was percieved natural by the proposed algorithm. The true and false value were based on if the ranks was greater than or less than `0.000050026261026025` (Which was decided based on one of the rank of a very valid question: `What is the  college of <A> ?`). further work need to be done to determine threshold, areas like fuzzy threshold might be explored for greater insight:
 
 ![Ranking Results](static/ranking_results.png)
 
+An important observation that I saw was that the ranking when done the threshold should be decided classwise and thus a single general threshold should not be used. Because the pages related to biology are seen fairly less than pages related to celebrities. But the relative number of views withing biology related pages is useful to us. Here is an example of another class:
+
+![Ranking Results Eukaryotes](static/ranking_results_eukaryotes.png)
+
+## Change Log:
+
+- In the previous implementation, I was using labels to differentiate the different entities, instead now I use the entity names as obtained from the properties page.
+
+- Will update Further after the meeting.
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 
