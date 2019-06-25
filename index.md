@@ -15,10 +15,12 @@ RDF is a directed, labeled graph data format for representing information in the
 
  | Serial Number| Heading           |Abstract|  Published On | Stage Number |
 |:-------------|:------------------|:-----------|:------|:----|
-| 1           | [The Selection Day](./TheSelectionDay.html) | My proposal was accepted for GSoC this year. A brief overview of my experience.| 8th May 2019  | Zero|
-| 2           | [Week Two](./WeekTwo.html) | Community Bonding Period \| First Meeting | 19th May 2019  | Zero |
-| 3           | [Week Three](./WeekThree.html) | Community Bonding Period \| Literature Survey | 30th May 2019  | Zero |
-| 4          | [Stage 0 Report](./stage0.html) | Community Bonding Period \| Stage Completition Report | 30th May 2019  | Zero |
-| 5          | [Week Four&Five](./WeekFive.html) | Stage 1 & 2\| The Coding Begins | 11th June 2019  | One & Two |
-| 6          | [Week Six](./WeekSix.html) | Stage 3 \| Code Crusade Week | 22th June 2019  | Three |
+| 1           | [The Selection Day](./TheSelectionDay) | My proposal was accepted for GSoC this year. A brief overview of my experience.| 8th May 2019  | Zero|
+| 2           | [Week Two](./WeekTwo) | Community Bonding Period \| First Meeting | 19th May 2019  | Zero |
+| 3           | [Week Three](./WeekThree) | Community Bonding Period \| Literature Survey | 30th May 2019  | Zero |
+| 4          | [Stage 0 Report](./stage0) | Community Bonding Period \| Stage Completition Report | 30th May 2019  | Zero |
+| 5          | [Week Four&Five](./WeekFive) | Stage 1 & 2\| The Coding Begins | 11th June 2019  | One & Two |
+| 6          | [Week Six](./WeekSix) | Stage 3 \| Code Crusade Week | 22th June 2019  | Three |
+| 7          | [Week Seven](./WeekSeven) | Stage 3 \| Looking Beyond | 25th June 2019  | Three |
+
 
