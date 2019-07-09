@@ -14,7 +14,7 @@ Boy!, this was a task that I had to carry on for weeks as undone in my meeting. 
 
 ![GERBIL Result](static/gerbil_working.png)
 
-Apart from that here is a poratl I made for Q&A, its pretty nice. I don't have a public IP will try to host it somewhere:
+Apart from that here is a poratl I made for Q&A, its pretty nice. I don't have a static public IP will try to host it somewhere:
 
 ![Portal](static/portal_working.png)
 
