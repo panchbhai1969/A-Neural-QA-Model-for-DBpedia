@@ -1,10 +1,10 @@
-# Week Eight and Nine | Stage 4 | Hard Week
+# Week Eight and Nine | Stage 4 | Hard Week, Slow performance gains
 
 ## TL;DR
 
-Pretty sloppy weeks! Here are the tasks I was upposed to accomplish this week:
+Pretty sloppy weeks! Here are the tasks I was supposed to accomplish this week:
 
-- A new test was suggested by one of the Mentors, making sure to have some composition template exclusively in the test:
+- A new test was suggested by one of the Mentors whuch was making sure to have some composition template exclusively in the test:
   - train will contain A, B
   - test will contain AoB
   - Her A and B represent ontology entities (*Done*)
@@ -48,6 +48,8 @@ dbr_Japan
 ### This Week Work
 
 - Try more experiments, understand, evolve and proceed.
+
+## End TL;DR
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 
