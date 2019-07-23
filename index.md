@@ -21,6 +21,6 @@ RDF is a directed, labeled graph data format for representing information in the
 | 6          | [Week Six](./WeekSix) | Stage 3 \| Code Crusade Week | 22nd June 2019  | Three |
 | 7          | [Week Seven](./WeekSeven) | Stage 3 \| Looking Beyond | 25th June 2019  | Three |
 | 8          | [Week Eight&Nine](./WeekNine) | Stage 4 \| Hard Week, Slow performance gains | 9th July 2019  | Four |
-| 8          | [Week Ten&Eleven](./WeekEleven) | Stage 5 \| Attention | 23rd July 2019  | Five |
+| 9          | [Week Ten&Eleven](./WeekEleven) | Stage 5 \| Attention | 23rd July 2019  | Five |
 
 
