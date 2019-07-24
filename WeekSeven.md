@@ -5,7 +5,7 @@ Pretty cool week! Here are the tasks I was upposed to accomplish this week:
 - Fixing the issues with GERBIL [Done]
 - F1 Score [Done]
 - More compositionality based on the mentor’s suggestions.
-  - Make questions more natural and near to what people will really ask. [Done |  New ranking proposed ]
+  - Make questions more natural and near to what people will really ask. [Done :  New ranking proposed ]
 - Make the model learm for a longer time. [Not Done]
 
 ## Fixing the issues with GERBIL & F1 Score
