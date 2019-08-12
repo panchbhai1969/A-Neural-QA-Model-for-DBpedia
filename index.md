@@ -22,5 +22,7 @@ RDF is a directed, labeled graph data format for representing information in the
 | 7          | [Week Seven](./WeekSeven) | Stage 3 \| Looking Beyond | 25th June 2019  | Three |
 | 8          | [Week Eight&Nine](./WeekNine) | Stage 4 \| Hard Week, Slow performance gains | 9th July 2019  | Four |
 | 9          | [Week Ten&Eleven](./WeekEleven.html) | Stage 5 \| Attention | 23rd July 2019  | Five |
+| 10          | [Week Twelve&Thirteen](./WeekThirteen.html) | Stage 6 \| Grid Search | 12th August 2019  | Six |
+
 
 
