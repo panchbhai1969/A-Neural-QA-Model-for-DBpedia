@@ -1,4 +1,4 @@
-remote_theme: panchbhai1969/just-the-docs
+theme: jekyll-theme-cayman
 title: A Neural QA Model for DBpedia
 description: Making data accessible to everyone
 google_analytics: UA-126874117-4
