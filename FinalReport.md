@@ -18,7 +18,8 @@ If you just wanna have a look at the pristinely written and managed code please 
 The Meeting Documents that was maintained for the whole duration of GSoC can be accessed through: <span style="color:red"> Add link here. </span>
 
 We will try to keep it short and simple, lets begin.
-![Begin](static/begin.gif)
+
+<span align="center">![Begin](static/start.gif)</span>
 
 ## Introduction
 
@@ -84,7 +85,9 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
 ### Stage 7 (August 11, 2019 - August 18, 2019)
 - Code cleanup  (BUFFER)
 
-### Students Submit Code and Final Evaluations: August 19 - 26, 2019
+## Students Submit Code and Final Evaluations: August 19 - 26, 2019
+
+---
 
 ## Future aspects of this project
 - The mentors and I decided to continue to work on the project for a few more months to get enough results to publish a paper.
