@@ -59,7 +59,7 @@ This stage will shed a light on where we stand and forge a concrete path this pr
 - Accessing the performance of the model in the previous point.  [<span style="color:green"> Done </span>]
 - Evaluate and adjust the model to gain maximum performance.  [<span style="color:green"> Done </span>]
 - Discuss the shortcomings and discuss what to do next, also involving the ideas suggested in the previous section. [<span style="color:green"> Done </span>]
-- 
+
 ### Stage 3 and 4 | Generalised question making framework for compositionality (June 10, 2019 - June 23, 2019)
 - Generating domain independent templates to minimize burden on the end user for both complex and simple QA. (As per the discussion in the previous stage ) [<span style="color:green"> Done </span>]
 
@@ -84,7 +84,11 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
 ### Stage 7 (August 11, 2019 - August 18, 2019)
 - Code cleanup  (BUFFER)
 
-## Students Submit Code and Final Evaluations: August 19 - 26, 2019
+### Students Submit Code and Final Evaluations: August 19 - 26, 2019
+
+## Future aspects of this project
+- The mentors and I decided to continue to work on the project for a few more months to get enough results to publish a paper.
+- The major aim being able to show the efficancy of current nmt models in translating compositionality based questions to proper SPARQL query. 
 
 
 
