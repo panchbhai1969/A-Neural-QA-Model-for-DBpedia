@@ -3,6 +3,9 @@
 ![Welcome](static/welcome.jpg)
 Welcome to the final report of this year's GSoC period, If you are a newbie and want t oknow about the journey of this project do read it from the very begining else lets dive straight in. The whole work was added as a single pull request whose link is as follows: <span style="color:red"> Add link here. </span>
 
+## TL:DR Begins
+## TL:DR Ends
+
 This page is divided into parts:
 
 - Introduction
@@ -52,13 +55,13 @@ The first stage will mainly focus on fixing all issues in the code to create a p
 - Fixing all the deprecated parts  of the code to ensure the usability of the code  [<span style="color:green"> Done </span>]
     - The issues that were fixed are:
 
-        | Issues        | URL           |
-        | ------------- |:-------------:|
-        | Zero division error                               | [(https://github.com/dbpedia/neural-qa/issues/8) ](https://github.com/dbpedia/neural-qa/issues/8) |
-        | Adding progress bar for loops in generator.py:    | [(https://github.com/dbpedia/neural-qa/issues/9)](https://github.com/dbpedia/neural-qa/issues/9)     |
-        | Fix tensorflow warnings                           | [(https://github.com/dbpedia/neural-qa/issues/10)](https://github.com/dbpedia/neural-qa/issues/10)              |
-        | Tensorflow version                                | [(https://github.com/dbpedia/neural-qa/issues/11)](https://github.com/dbpedia/neural-qa/issues/11)              |
-        | Fix PIPELINE                                      | [(https://github.com/dbpedia/neural-qa/issues/12)](https://github.com/dbpedia/neural-qa/issues/12)              |
+        | Issues        | URL           | Fixed|
+        | ------------- |:-------------:|------:|
+        | Zero division error                               | [(https://github.com/dbpedia/neural-qa/issues/8) ](https://github.com/dbpedia/neural-qa/issues/8) |<span style="color:green"> Yes </span> |
+        | Adding progress bar for loops in generator.py:    | [(https://github.com/dbpedia/neural-qa/issues/9)](https://github.com/dbpedia/neural-qa/issues/9)     |<span style="color:green"> Yes </span> |
+        | Fix tensorflow warnings                           | [(https://github.com/dbpedia/neural-qa/issues/10)](https://github.com/dbpedia/neural-qa/issues/10)              | <span style="color:green"> Yes </span> |
+        | Tensorflow version                                | [(https://github.com/dbpedia/neural-qa/issues/11)](https://github.com/dbpedia/neural-qa/issues/11)              | <span style="color:green"> Yes </span> |
+        | Fix PIPELINE                                      | [(https://github.com/dbpedia/neural-qa/issues/12)](https://github.com/dbpedia/neural-qa/issues/12)              | <span style="color:green"> Yes </span> |
 - Improve the readme to ensure better understanding of the project to new developers and yourself.  [<span style="color:green"> Done </span>]
     - Readme fixes: [https://github.com/AKSW/NSpM/pull/21]
 - Use accuracy measures other than BLEU like F-score (Do initial setup for all of them)  [<span style="color:orange"> Completed in stage 3  </span>]
@@ -89,7 +92,7 @@ This stage will shed a light on where we stand and forge a concrete path this pr
 - Generating domain independent templates to minimize burden on the end user for both complex and simple QA. (As per the discussion in the previous stage ) [<span style="color:green"> Done </span>]
     - It was a rather complicated task, it is elaborately written as one of my post: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSix](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSix)
 
-### Stage 4 | Let's make it all natural (June 28, 2019 -  - July 5, 2019)
+### Stage 4 | Let's make it all natural (June 28, 2019 - July 5, 2019)
 
 Making questions more natural, it was a rather interesting question. I used a mechanism similar to page rank used by google.
 
@@ -98,7 +101,6 @@ Making questions more natural, it was a rather interesting question. I used a me
 - Popularity can be loosely related to the number of page views and the page view values were extracted from SubjectiveEye3D paper. 
 - Again the detailed information of the methodology can be found at: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven)
 
-![Page Rank](static/pagerank.jpeg)
 
 ## Evaluation 1: June 24 - 28, 2019 
 
