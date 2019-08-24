@@ -105,8 +105,10 @@ Making questions more natural, it was a rather interesting question. I used a me
 This stage will be the last stage that tries to address the problems  related to template generation for simple and complex QA.
 
 - Current complex QA model doesn’t understand when to add a new variable in the query, need to devise a method to make it more aware. Discuss and fInd a way to handle these points in the model. (Some of my ideas were mentioned in the previous section ) [<span style="color:red"> Not Done </span>]
+    - This aspect tried to address an issue which could not be accomodated in the current timeline.
+    - The overall direction of the project is analysisng the compositionality of the code.
+    - Thus it was dropped and can be considered as future aspect of the project.
 - Discuss the results and devise plans for the future steps. 
-
 
 ## Evaluation 2: July 22 - 26, 2019 	
 
@@ -124,9 +126,11 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
 
 ### Stage 7 (August 11, 2019 - August 18, 2019)
 - Code cleanup  (BUFFER) [<span style="color:green"> Done </span>]
+- Discussion for future scope of the project [<span style="color:orange"> Initial Discussion was done </span>]
 
 ## Students Submit Code and Final Evaluations: August 19 - 26, 2019
 
+---
 
 ## Future aspects of this project
 - The mentors and I decided to continue to work on the project for a few more months to get enough results to publish a paper.
