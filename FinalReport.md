@@ -1,11 +1,12 @@
 # Final Report | Stage 7 | The final report
-## A Neural QA Model for DBpedia
+## Anand Panchbhai | A Neural QA Model for DBpedia | GSoC'19
 ![Welcome](static/welcome.jpg)
+
 Welcome to the final report of this year's GSoC period, If you are a newbie and want t oknow about the journey of this project do read it from the very begining else lets dive straight in. 
 
 If you just wanna have a look at the pristinely written and managed code please find it in the following link: [Github Repository: https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand](https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand)
 
-The whole work was added as a single pull request whose link is as follows: https://github.com/dbpedia/neural-qa/pull/14
+The whole work was added as a single pull request whose link is as follows: https://github.com/dbpedia/neural-qa/pull/14. YOu can contact me at: panchbhai1969[at]gmail[dot]com
 
 This page is divided into parts:
 
@@ -123,7 +124,7 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
     -The corresponding chart is as follows: [Grid Search](static/GridSearch/GridSearch.html)
     - The best results were obtained were:
         - BLEU = ~93
-        - Accuracy = 60
+        - Accuracy = 63
     - Details results can be found in the blog: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html)
 - Discussion with the mentors. [<span style="color:green"> Done </span>]
     - Most of the experiments were done on Eukaryotes. The grid search was done on the hyperparameters of the model and not the embeddings used. 
