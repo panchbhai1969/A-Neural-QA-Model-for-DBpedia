@@ -1,4 +1,4 @@
-# The training week | THe Results
+# The training week | The Results
 
 ## TL;DR
 
