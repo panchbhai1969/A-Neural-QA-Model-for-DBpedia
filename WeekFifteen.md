@@ -14,7 +14,11 @@ Looking at the time constraints it is not possible to look into something new an
 ### Tests on the Person data
 
 New tests were done on the person dataset. The following results were found:(attention: attention scaled luong)
-
 <span align="centre">![table](static/table.png)</span>
+
+## TL:DR ends
+
+<span align="centre">![table](static/person_results.png)</span>
+
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
