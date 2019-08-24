@@ -1,7 +1,11 @@
 # Final Report | Stage 7 | The final report
 ## A Neural QA Model for DBpedia
 ![Welcome](static/welcome.jpg)
-Welcome to the final report of this year's GSoC period, If you are a newbie and want t oknow about the journey of this project do read it from the very begining else lets dive straight in. The whole work was added as a single pull request whose link is as follows: <span style="color:red"> Add link here. </span>
+Welcome to the final report of this year's GSoC period, If you are a newbie and want t oknow about the journey of this project do read it from the very begining else lets dive straight in. 
+
+If you just wanna have a look at the pristinely written and managed code please find it in the following link: [Github Repository: https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand](https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand)
+
+The whole work was added as a single pull request whose link is as follows: https://github.com/dbpedia/neural-qa/pull/14
 
 This page is divided into parts:
 
@@ -13,7 +17,7 @@ This page is divided into parts:
     - What is left and what was discarded for being impractical.
 - Future aspects of this project
 
-If you just wanna have a look at the pristinely written and managed code please find it in the following link: [Github Repository: https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand](https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand)
+
 
 The Meeting Documents that was maintained for the whole duration of GSoC can be accessed through: [Minutes of the Meeting](static/MOM/MOM.html)
 
@@ -122,6 +126,9 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
         - Accuracy = 60
     - Details results can be found in the blog: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html)
 - Discussion with the mentors. [<span style="color:green"> Done </span>]
+    - Most of the experiments were done on Eukaryotes. The grid search was done on the hyperparameters of the model and not the embeddings used. 
+    - On using embeddings a boost in performance was observed the best results above incooperated those experiments too.
+    - We then started working on other ontologies too, namely *Person*. The results were interesting and can be found at: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html)
 - Code cleanup (BUFFER) [<span style="color:orange"> Completed in stage 7 </span>]
 
 ### Stage 7 (August 11, 2019 - August 18, 2019)
