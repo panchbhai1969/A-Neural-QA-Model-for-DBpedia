@@ -50,8 +50,28 @@ Understand the the current code base in detail, ponder upon all possible improve
 The first stage will mainly focus on fixing all issues in the code to create a proper playing ground for future research endeavour that the project intends to take.
 
 - Fixing all the deprecated parts  of the code to ensure the usability of the code  [<span style="color:green"> Done </span>]
+    - The issues that were fixed are:
+        | Issues        | URL           |
+        | ------------- |:-------------:|
+        | Zero division error                               | [(https://github.com/dbpedia/neural-qa/issues/8) ](https://github.com/dbpedia/neural-qa/issues/8) |
+        | Adding progress bar for loops in generator.py:    | [(https://github.com/dbpedia/neural-qa/issues/9)](https://github.com/dbpedia/neural-qa/issues/9)     |
+        | Fix tensorflow warnings                           | [(https://github.com/dbpedia/neural-qa/issues/10)](https://github.com/dbpedia/neural-qa/issues/10)              |
+        | Tensorflow version                                | [(https://github.com/dbpedia/neural-qa/issues/11)](https://github.com/dbpedia/neural-qa/issues/11)              |
+        | Fix PIPELINE                                      | [(https://github.com/dbpedia/neural-qa/issues/12)](https://github.com/dbpedia/neural-qa/issues/12)              |
 - Improve the readme to ensure better understanding of the project to new developers and yourself.  [<span style="color:green"> Done </span>]
+    - Readme fixes: [https://github.com/AKSW/NSpM/pull/21]
 - Use accuracy measures other than BLEU like F-score (Do initial setup for all of them)  [<span style="color:orange"> Completed in stage 3  </span>]
+    - BLEU is implemented as part of the NMT model.
+    - F1 Score was implemented using GERBIL (Micro-F1 was used for all the tests)
+        - As part of establishing a system for using GERBIL the following projects had to be setup:
+
+            | Issues        | URL           |
+            | ------------- |:-------------:|
+            |GERBIL|[https://github.com/dice-group/gerbil](https://github.com/dice-group/gerbil)|
+            |Django WebApp|[https://github.com/panchbhai1969/gerbil-client-django-webapp](https://github.com/panchbhai1969/gerbil-client-django-webapp)|
+
+        - Both contain instructions to run the repository.
+    - The blog to the corresponding coding stage is: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven)
 - Setting up a way to evaluate the model against the QALD benchmark.  [<span style="color:green"> Done </span>]
 
 ### Stage 2 | Where do we stand today?  (June 5, 2019 - June 10, 2019)
@@ -87,7 +107,6 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
 
 ## Students Submit Code and Final Evaluations: August 19 - 26, 2019
 
----
 
 ## Future aspects of this project
 - The mentors and I decided to continue to work on the project for a few more months to get enough results to publish a paper.
