@@ -51,6 +51,7 @@ The first stage will mainly focus on fixing all issues in the code to create a p
 
 - Fixing all the deprecated parts  of the code to ensure the usability of the code  [<span style="color:green"> Done </span>]
     - The issues that were fixed are:
+
         | Issues        | URL           |
         | ------------- |:-------------:|
         | Zero division error                               | [(https://github.com/dbpedia/neural-qa/issues/8) ](https://github.com/dbpedia/neural-qa/issues/8) |
