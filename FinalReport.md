@@ -74,20 +74,35 @@ The first stage will mainly focus on fixing all issues in the code to create a p
         - Both contain instructions to run the repository.
     - The blog to the corresponding coding stage is: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven)
 - Setting up a way to evaluate the model against the QALD benchmark.  [<span style="color:green"> Done </span>]
+    - GERBIL setup [<span style="color:green"> Done </span>]
 
 ### Stage 2 | Where do we stand today?  (June 5, 2019 - June 10, 2019)
 This stage will shed a light on where we stand and forge a concrete path this project will take. (as according to Aman’s blog, extensive work couldn't be done in compositionality for complex QA because of the time constraints of the project).
 - Test the existing model on compositionality for complex QA.   [<span style="color:green"> Done </span>]
+    - Test were run on the following templates: [https://github.com/dbpedia/neural-qa/blob/master/data/GS-v3.csv](https://github.com/dbpedia/neural-qa/blob/master/data/GS-v3.csv) 
 - Accessing the performance of the model in the previous point.  [<span style="color:green"> Done </span>]
+    - The BLUE score on the test split reached ~95.
 - Evaluate and adjust the model to gain maximum performance.  [<span style="color:green"> Done </span>]
 - Discuss the shortcomings and discuss what to do next, also involving the ideas suggested in the previous section. [<span style="color:green"> Done </span>]
 
-### Stage 3 and 4 | Generalised question making framework for compositionality (June 10, 2019 - June 23, 2019)
+### Stage 3 | Generalised question making framework for compositionality (June 10, 2019 - June 23, 2019)
 - Generating domain independent templates to minimize burden on the end user for both complex and simple QA. (As per the discussion in the previous stage ) [<span style="color:green"> Done </span>]
+    - It was a rather complicated task, it is elaborately written as one of my post: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSix](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSix)
+
+### Stage 4 | Let's make it all natural (June 28, 2019 -  - July 5, 2019)
+
+Making questions more natural, it was a rather interesting question. I used a mechanism similar to page rank used by google.
+
+- The major idealogy used was: 
+>> Hypothesis: Relevance of template can be determined by the popularity of the corresponding answers.
+- Popularity can be loosely related to the number of page views and the page view values were extracted from SubjectiveEye3D paper. 
+- Again the detailed information of the methodology can be found at: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekSeven)
+
+![Page Rank](static/pagerank.jpeg)
 
 ## Evaluation 1: June 24 - 28, 2019 
 
-### Stage 5 | Finishing Question Making (June 6, 2019 - July 21, 2019)
+### Stage 5 | Finishing Question Making (July 6, 2019 - July 21, 2019)
 This stage will be the last stage that tries to address the problems  related to template generation for simple and complex QA.
 
 - Current complex QA model doesn’t understand when to add a new variable in the query, need to devise a method to make it more aware. Discuss and fInd a way to handle these points in the model. (Some of my ideas were mentioned in the previous section ) [<span style="color:red"> Not Done </span>]
