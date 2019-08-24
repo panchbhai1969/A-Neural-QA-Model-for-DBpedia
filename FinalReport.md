@@ -3,9 +3,6 @@
 ![Welcome](static/welcome.jpg)
 Welcome to the final report of this year's GSoC period, If you are a newbie and want t oknow about the journey of this project do read it from the very begining else lets dive straight in. The whole work was added as a single pull request whose link is as follows: <span style="color:red"> Add link here. </span>
 
-## TL:DR Begins
-## TL:DR Ends
-
 This page is divided into parts:
 
 - Introduction
@@ -117,7 +114,7 @@ This stage will be the last stage that tries to address the problems  related to
 ### Stage 6 | The Grid Search (July 27, 2019 - August 10, 2019)
 Evaluating the performance of the model by tweaking the attributes for the NMT model to give maximum performance using the training dataset generated in the previous stages. 
 - Grid Search [<span style="color:green"> Done </span>] 
-    -The corresponding chart is as follows: [Grid Search](static/GridSearch.html)
+    -The corresponding chart is as follows: [Grid Search](static/GridSearch/GridSearch.html)
     - The best results were obtained were:
         - BLEU = ~93
         - Accuracy = 60
