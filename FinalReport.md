@@ -116,12 +116,17 @@ This stage will be the last stage that tries to address the problems  related to
 
 ### Stage 6 | The Grid Search (July 27, 2019 - August 10, 2019)
 Evaluating the performance of the model by tweaking the attributes for the NMT model to give maximum performance using the training dataset generated in the previous stages. 
-- Grid Search [<span style="color:green"> Done </span>]
+- Grid Search [<span style="color:green"> Done </span>] 
+    -The corresponding chart is as follows: [Grid Search](static/GridSearch.html)
+    - The best results were obtained were:
+        - BLEU = ~93
+        - Accuracy = 60
+    - Details results can be found in the blog: [https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/WeekFifteen.html)
 - Discussion with the mentors. [<span style="color:green"> Done </span>]
 - Code cleanup (BUFFER) [<span style="color:orange"> Completed in stage 7 </span>]
 
 ### Stage 7 (August 11, 2019 - August 18, 2019)
-- Code cleanup  (BUFFER)
+- Code cleanup  (BUFFER) [<span style="color:green"> Done </span>]
 
 ## Students Submit Code and Final Evaluations: August 19 - 26, 2019
 
