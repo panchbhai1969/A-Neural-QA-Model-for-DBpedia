@@ -13,9 +13,9 @@ This page is divided into parts:
     - What is left and what was discarded for being impractical.
 - Future aspects of this project
 
-If you just wanna have a look at the pristinely written and managed code please find it in the following link: <span style="color:red"> Add link here. </span>
+If you just wanna have a look at the pristinely written and managed code please find it in the following link: [Github Repository: https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand](https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand)
 
-The Meeting Documents that was maintained for the whole duration of GSoC can be accessed through: <span style="color:red"> Add link here. </span>
+The Meeting Documents that was maintained for the whole duration of GSoC can be accessed through: [Minutes of the Meeting](static/MOM/MOM.html)
 
 We will try to keep it short and simple, lets begin.
 
