@@ -110,11 +110,11 @@ Making questions more natural, it was a rather interesting question. I used a me
 ### Stage 5 | Finishing Question Making (July 6, 2019 - July 21, 2019)
 This stage will be the last stage that tries to address the problems related to template generation for simple and complex QA.
 
-- Current complex QA model doesn’t understand when to add a new variable in the query, need to devise a method to make it more aware. Discuss and find a way to handle these points in the model. (Some of my ideas were mentioned in the previous sections of the proposal ) [<span style="color:red"> Not Done </span>]
-    - This aspect tried to address an issue which could not be accomodated in the current timeline.
+- Current complex QA model doesn’t understand when to add a new variable in the query, need to devise a method to make it more aware. Discuss and find a way to handle these points in the model. (Some of my ideas were mentioned in the previous sections of the proposal ) [<span style="color:green">Done </span>]
+    - This aspect of the code was optional in the proposal
     - The overall direction of the project is analysisng the compositionality capability of the code.
-    - Thus it was dropped and can be considered as future scope of the project.
-- Discuss the results and devise plans for the future steps. [<span style="color:red"> Not Done </span>]
+    - During the previous stage a generalized mechanism was built to generate question with variable depth as per the requirement of the user. on changing the depth from 1 to 2 that is the case of compositionality the model was able to perform that can be inferred from the results in the later stage.
+    - Future scope of the project can include more tesing on the capbility of the model to determine when new variables need to be used. [<span style="color:blue">Future Scope </span>]
 
 ## Evaluation 2: July 22 - 26, 2019 	
 
