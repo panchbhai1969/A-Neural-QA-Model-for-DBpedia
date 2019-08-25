@@ -17,7 +17,7 @@ This page is 3 divided into parts:
     - Comparision between what was proposed and what was done.
     - New innovative ideas introduced in that stage and link to detailed information about that idea
     - Link to corresponding code and blog
-    - What is not done?
+    - What is not done.
 - Future aspects of this project
 
 
@@ -144,8 +144,11 @@ Evaluating the performance of the model by tweaking the attributes for the NMT m
 ## Future aspects of this project
 - The mentors and I decided to continue to work on the project for a few more months to get enough results to publish a paper.
 - The major aim being able to show the efficancy of current nmt models in translating compositionality based questions to proper SPARQL query. 
-
-
+- The work to be done includes:<span style="color:blue">
+    - Running more experiments
+    - Comparing with the current state of the art
+    - Working on variable awareness
+    - Testing a fully trained model on QALD and LC-QuAD</span>
 
 ### [Index Page](https://anandpanchbhai.com/A-Neural-QA-Model-for-DBpedia/)
 
