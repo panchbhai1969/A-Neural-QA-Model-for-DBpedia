@@ -44,7 +44,7 @@ The whole project was divided into 7 stages according to the proposal submitted.
 
 ### Stage 0 | Community bonding period (May 6 - 27, 2019)
 
-To understand the the current code base in detail, ponder upon all possible improvements and discuss with the mentors.
+To understand the current code base in detail, ponder upon all possible improvements and discuss with the mentors.
 
 - Get to know the mentors and the community: listen, communicate and learn. [<span style="color:green"> Done </span>]
 - Learn about the intricacies of the coding practices followed by DBpedia, which include coding, community relations as well as version control practices. [<span style="color:green"> Done </span>]
@@ -87,7 +87,7 @@ This stage will shed a light on where we stand and forge a concrete path this pr
 - Test the existing model on compositionality for complex QA.   [<span style="color:green"> Done </span>]
     - Test were run on the following templates: [https://github.com/dbpedia/neural-qa/blob/master/data/GS-v3.csv](https://github.com/dbpedia/neural-qa/blob/master/data/GS-v3.csv) 
 - Accessing the performance of the model in the previous point.  [<span style="color:green"> Done </span>]
-    - The BLUE score on the test split reached ~95 units.
+    - The BLEU score on the test split reached ~95 units.
 - Evaluate and adjust the model to gain maximum performance.  [<span style="color:green"> Done </span>]
 - Discuss the shortcomings and what to do next, also involving the ideas suggested in the previous sections of the proposal. [<span style="color:green"> Done </span>]
 
