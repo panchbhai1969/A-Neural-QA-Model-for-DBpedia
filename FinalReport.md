@@ -62,7 +62,6 @@ The first stage will mainly focus on fixing all issues in the code base to creat
         | ------------- |:-------------:|------:|
         | Zero division error                               | [(https://github.com/dbpedia/neural-qa/issues/8) ](https://github.com/dbpedia/neural-qa/issues/8) |<span style="color:green"> Yes </span> |
         | Adding progress bar for loops in generator.py:    | [(https://github.com/dbpedia/neural-qa/issues/9)](https://github.com/dbpedia/neural-qa/issues/9)     |<span style="color:green"> Yes </span> |
-        | Fix tensorflow warnings                           | [(https://github.com/dbpedia/neural-qa/issues/10)](https://github.com/dbpedia/neural-qa/issues/10)              | <span style="color:green"> Yes </span> |
         | Tensorflow version                                | [(https://github.com/dbpedia/neural-qa/issues/11)](https://github.com/dbpedia/neural-qa/issues/11)              | <span style="color:green"> Yes </span> |
         | Fix PIPELINE                                      | [(https://github.com/dbpedia/neural-qa/issues/12)](https://github.com/dbpedia/neural-qa/issues/12)              | <span style="color:green"> Yes </span> |
 - Improve the readme to ensure better understanding of the project to new developers and yourself.  [<span style="color:green"> Done </span>]
