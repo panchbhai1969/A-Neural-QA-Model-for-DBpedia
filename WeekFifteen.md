@@ -1,6 +1,23 @@
 # The training week | The Results
 
 ## TL;DR
+[Eukaryotes] : Using pre-trained embeddings for DBpedia (Biased graph walks: https://zenodo.org/record/1320038#.XT8CeHUzbEG) for SPARQL embeddings and English: pre trained embeddings using the models already trained by me with the following configuration:  
+- Layer:2 
+- Size: 128
+- Without attention
+- Drop-out: 0.2
+- Dataset: 10% test | 10% dev | 80% train
+- BLEU: 97.69 and accuracy: 89.75
+
+The performance reached was:
+- BLEU: 93 units
+- Accuracy: 63 units
+
+Best results were reached at 15000 iterations, 
+
+Interestingly the train set had a hard time to reach good performance. The performance dipped after 45,000 iterations to 85 BLEU and 25% accuracy. May be overfitting. The mentors too agreed that this decrease might be the case of overfitting.
+
+![Eyukaryotes: Test BLEU graph](static/eukaryotes-test-bleu.png)
 
 Two directions were suggested by the mentors in the last meeting:
 - One was to continue using the RDF2Vec embedding and record all the results thus ending the GSoC project there

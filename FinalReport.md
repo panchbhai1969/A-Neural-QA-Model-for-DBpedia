@@ -6,7 +6,7 @@ Welcome to the final report of my 2019 GSoC project, If you are a newbie and wan
 
 >> If you wanna have a look at code please find it in the following link: [Github Repository: https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand](https://github.com/dbpedia/neural-qa/tree/working-gsoc-anand)
 
-The whole work was added as a single pull request whose link is as follows: https://github.com/dbpedia/neural-qa/pull/14. 
+The whole work was added as a single pull request whose link is as follows: [https://github.com/dbpedia/neural-qa/pull/14](https://github.com/dbpedia/neural-qa/pull/14). 
 
 You can contact me at: panchbhai1969[at]gmail[dot]com
 
@@ -22,7 +22,7 @@ This page is 3 divided into parts:
 
 
 
-The Meeting Documents that was maintained for the whole duration of GSoC project can be accessed through: [Minutes of the Meeting](static/MOM/MOM.html)
+The Meeting Documents that was maintained for the whole duration of GSoC project can be accessed through: [Minutes of the Meeting](https://docs.google.com/document/d/1DV0pjK56EZCOcziEEKkWviTKRGt6USvEFxjhHwc2LvM/edit?usp=sharingss)
 
 We will try to keep it short and simple, lets begin.
 
@@ -113,8 +113,8 @@ This stage will be the last stage that tries to address the problems related to 
 - Current complex QA model doesn’t understand when to add a new variable in the query, need to devise a method to make it more aware. Discuss and find a way to handle these points in the model. (Some of my ideas were mentioned in the previous sections of the proposal ) [<span style="color:green">Done </span>]
     - This aspect of the code was optional in the proposal
     - The overall direction of the project is analysisng the compositionality capability of the code.
-    - During the previous stage a generalized mechanism was built to generate question with variable depth as per the requirement of the user. on changing the depth from 1 to 2 that is the case of compositionality the model was able to perform that can be inferred from the results in the later stage.
-    - Future scope of the project can include more tesing on the capbility of the model to determine when new variables need to be used. [<span style="color:blue">Future Scope </span>]
+    - During the previous stage a generalized mechanism was built to generate question with variable depth as per the requirement of the user. On changing the depth from 1 to 2 that is the case of compositionality the model was able to perform well, this can be inferred from the results obtained in the later stages.
+    - Future scope of the project can include more tesing on the capbility of the model to determine when new variables need to be used by increasing the depth further. [<span style="color:blue">Future Scope </span>]
 
 ## Evaluation 2: July 22 - 26, 2019 	
 
